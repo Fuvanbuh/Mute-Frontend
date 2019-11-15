@@ -7,6 +7,7 @@ export default class Test extends Component {
   state = {
     maps: null,
   }
+
   componentDidMount = async () => {
     const newMaps = await mapService.getAllMaps();
     console.log(newMaps)
@@ -15,11 +16,16 @@ export default class Test extends Component {
     })
   }
 
+/*   onDelete = () => {
+
+  } */
+  
+
   render() {
     const { maps } = this.state
     return (
       <div>
-        <CardStory maps={maps} />
+        <CardStory maps={maps} onDelete={this.onDelete}/>
       </div>
     )
   }
