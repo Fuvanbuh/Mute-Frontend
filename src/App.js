@@ -20,9 +20,9 @@ class App extends Component {
           <div >
             <h1>Basic React Authentication</h1>
             <Switch>
-              <AnonRoute path="/signup" component={Signup} />
-              <AnonRoute path="/login" component={Login} />
-              <PrivateRoute path="/home" component={Home} />
+              <AnonRoute path="/signup" exact component={Signup} />
+              <AnonRoute path="/login" exact component={Login} />
+              <PrivateRoute path="/home" exact component={Home} />
             </Switch>
           </div>
         </AuthProvider>
