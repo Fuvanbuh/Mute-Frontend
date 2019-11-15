@@ -4,9 +4,10 @@ import { BrowserRouter as Router, Switch } from 'react-router-dom';
 import PrivateRoute from './components/PrivateRoute.js';
 import AnonRoute from './components/AnonRoute.js';
 
-import Home from './pages/Home';
+//import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
+import HomePage from './pages/HomePage';
 
 import AuthProvider from './contexts/auth-context.js';
 
@@ -22,7 +23,8 @@ class App extends Component {
             <Switch>
               <AnonRoute path="/signup" exact component={Signup} />
               <AnonRoute path="/login" exact component={Login} />
-              <PrivateRoute path="/home" exact component={Home} />
+              <PrivateRoute path="/homePage" component={HomePage} />
+              {/* <PrivateRoute path="/home" exact component={Home} /> */}
             </Switch>
           </div>
         </AuthProvider>
