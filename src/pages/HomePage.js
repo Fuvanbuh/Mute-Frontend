@@ -19,7 +19,6 @@ export default class Test extends Component {
     const { maps } = this.state
     return (
       <div>
-        <h1>Teeeest</h1>
         <CardStory maps={maps} />
       </div>
     )
