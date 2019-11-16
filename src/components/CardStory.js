@@ -10,16 +10,16 @@ import { Link } from 'react-router-dom';
 
 export const CardStory = (props) => {
   const { maps } = props
-
+  
   return (
     <>
       <div>
         {maps &&
           maps.map((mapa, index) => (
-            <div key={index} style={{ backgroundImage: `url(${mapa.story.theme.background})` }}>
+            <div key={index} style={{backgroundImage: `url(${mapa.story.theme.backgorund})`}}>
               <h1>{mapa.story.title}</h1>
               <Link to='/EditStory'>edit</Link>
-              <button onClick={() => props.onDelete(props.id)}>Delete</button>
+              <button onClick={()=> props.deleteOneMap(mapa._id)} >Delete</button>
             </div>)
           )}
           <div>
