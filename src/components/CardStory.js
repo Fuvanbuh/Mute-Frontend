@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 //Delete button: esta rebent per props una funció que s'executa a Home i varia l'estat de la HomePage perque desapareix una historia, aquell User perd un dels seus maps.story
 
 export const CardStory = (props) => {
+  console.log(props)
   const { maps } = props
 
   return (
