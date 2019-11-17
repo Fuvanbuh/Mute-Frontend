@@ -18,6 +18,11 @@ class MapService {
     return this.map.delete(`/map/${id}/delete`)
       .then(response => response.data)
   }
+
+  getTheMap (id) {
+    return this.map.get(`/map/${id}`)
+    .then(response => response.data)
+  }
 }
 
 const mapService = new MapService();
