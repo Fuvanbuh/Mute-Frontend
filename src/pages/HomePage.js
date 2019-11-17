@@ -18,7 +18,7 @@ class HomePage extends Component {
 
   deleteOneMap = async (mapId) => {
     const { maps } = this.state
-    const response = await mapService.deleteMap(mapId);
+  /*   const response =  */await mapService.deleteMap(mapId);
     const newArray = maps.filter((item => item._id !== mapId));
     
     this.setState({

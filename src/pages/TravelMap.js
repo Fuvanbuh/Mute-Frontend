@@ -11,7 +11,6 @@ class TravelMap extends Component {
 
   componentDidMount = async () => {
     const { idMap } = this.props.match.params
-
     const oneMap = await mapService.getTheMap(idMap);
     this.setState({
       map: oneMap
@@ -25,17 +24,14 @@ class TravelMap extends Component {
     const { map } = this.state
     return (
       <div>
-        <h1>hola</h1>
-       
-         {map &&
+        {map &&
           map.story.theme.checkpoint.map((mapa, index) => (
-            <Link to={`/travelMap/${map._id}/path/${map.completePath}`}>
-            <img src={require(`../images/${mapa}`)} key={index} alt="planet chekpoint" />
+            <Link key={index} to={{ pathname: `/travelMap/${map._id}/path/${index}`, state: { map } }}>
+              <img src={require(`../images/${mapa}`)} alt="planet chekpoint" />
             </Link>
 
           )
-          )} 
-
+          )}
       </div>
     )
   }
