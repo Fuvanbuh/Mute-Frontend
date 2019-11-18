@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import mapService from '../services/map-service'
-import { CardStory } from '../components/CardStory'
+import  CardStory  from '../components/CardStory'
+import withAuth from '../components/withAuth'
 
-export default class Test extends Component {
+class HomePage extends Component {
 
   state = {
     maps: null,
@@ -10,23 +11,34 @@ export default class Test extends Component {
 
   componentDidMount = async () => {
     const newMaps = await mapService.getAllMaps();
-    console.log(newMaps)
     this.setState({
       maps: newMaps
     })
   }
 
-/*   onDelete = () => {
+  deleteOneMap = async (mapId) => {
+    const { maps } = this.state
+    const response = await mapService.deleteMap(mapId);
+    const newArray = maps.filter((item => item._id !== mapId));
+    
+    this.setState({
+      maps: newArray
+    })
+  }
 
-  } */
-  
+
 
   render() {
+    console.log('maps', this.state.maps)
     const { maps } = this.state
     return (
       <div>
-        <CardStory maps={maps} onDelete={this.onDelete}/>
+        <button onClick={this.props.logout}>Logout</button>
+        
+        <CardStory maps={maps} deleteOneMap={this.deleteOneMap} />
       </div>
     )
   }
 }
+
+export default withAuth(HomePage)

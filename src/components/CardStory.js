@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import withAuth from './withAuth';
 
 
 //NO FUNCIONA EL BACKGROUND PORQUE THEME NO ESTA POPULADO
@@ -8,25 +9,28 @@ import { Link } from 'react-router-dom';
 
 //Delete button: esta rebent per props una funció que s'executa a Home i varia l'estat de la HomePage perque desapareix una historia, aquell User perd un dels seus maps.story
 
-export const CardStory = (props) => {
+const CardStory = (props) => {
   const { maps } = props
-  
+
 
   return (
     <>
       <div>
         {maps &&
           maps.map((mapa, index) => (
-            <div key={index} style={{ backgroundImage: `url(${mapa.story.theme.background})` }}>
+            <div key={index} style={{ backgroundImage: `url(${mapa.story.theme.backgorund})` }}>
               <h1>{mapa.story.title}</h1>
-              <Link to='/EditStory'>edit</Link>
-              <button onClick={() => props.onDelete(props.id)}>Delete</button>
+
+              {mapa.story.creator === props.user._id ? <Link to='/EditStory'>edit</Link>: null}
+              <button onClick={() => props.deleteOneMap(mapa._id)} >Delete</button>
             </div>)
           )}
-          <div>
-            <Link to='/newStory'>+</Link>
-          </div>
+        <div>
+          <Link to='/newStory'>+</Link>
+        </div>
       </div>
     </>
   )
 }
+
+export default withAuth(CardStory)
