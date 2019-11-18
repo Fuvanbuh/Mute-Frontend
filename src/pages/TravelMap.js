@@ -11,7 +11,6 @@ class TravelMap extends Component {
 
   componentDidMount = async () => {
     const { idMap } = this.props.match.params
-
     const oneMap = await mapService.getTheMap(idMap);
     this.setState({
       map: oneMap
