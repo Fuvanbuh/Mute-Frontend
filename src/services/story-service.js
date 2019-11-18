@@ -20,6 +20,11 @@ class StoryService {
     return this.story.put(`/story/${id}/edit`, updatedStory)
       .then(response => response.data)
   }
+  getOneStory(id) {
+    return this.story.get(`/story/${id}`).then(response => response);
+  }
+
+
 }
 const storyService = new StoryService();
 export default storyService;
