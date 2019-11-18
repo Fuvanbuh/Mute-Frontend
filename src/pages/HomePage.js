@@ -3,6 +3,7 @@ import mapService from '../services/map-service'
 import CardStory from '../components/CardStory'
 import withAuth from '../components/withAuth'
 
+
 class HomePage extends Component {
 
   state = {
@@ -36,7 +37,7 @@ class HomePage extends Component {
     return (
       <div>
         <button onClick={this.props.logout}>Logout</button>
-
+        
         <CardStory maps={maps} deleteOneMap={this.deleteOneMap} />
       </div>
     )
