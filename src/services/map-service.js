@@ -23,6 +23,13 @@ class MapService {
     return this.map.get(`/map/${id}`)
     .then(response => response.data)
   }
+
+  modifyPathMap(id){
+    return this.map.put(`/map/${id}/edit`)
+    .then (response => response.data)
+  }
+
+
 }
 
 const mapService = new MapService();

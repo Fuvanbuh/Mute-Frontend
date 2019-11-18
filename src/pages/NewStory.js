@@ -1,20 +1,19 @@
 import React, { Component } from 'react'
 import storyService from '../services/story-service'
-import authService from '../services/auth-service'
 
 import FormStory from '../components/FormStory'
 
 class NewStory extends Component {
-  state={
-    title:"",
-    text:"",
-    question:"",
-    answer1:"",
-    answer2:"",
-    answer3:"",
-    correct:"",
-    creator:"",
-    background:"",
+  state = {
+    title: "",
+    text: "",
+    question: "",
+    answer1: "",
+    answer2: "",
+    answer3: "",
+    correct: "",
+    creator: "",
+    background: "",
   }
 
   handleOnChange = event => {
@@ -40,7 +39,7 @@ class NewStory extends Component {
     } = this.state;
 
 
-    const newStory={
+    const newStory = {
       title,
       text,
       question,
@@ -50,21 +49,21 @@ class NewStory extends Component {
       correct,
       background,
     }
-   /*  const storyCreator={
-      creator
-    }
-
-    const creatorOfStory = authService.me(storyCreator);
-    this.setState({
-      creator:creatorOfStory
-    }) */
+    /*  const storyCreator={
+       creator
+     }
+ ​
+     const creatorOfStory = authService.me(storyCreator);
+     this.setState({
+       creator:creatorOfStory
+     }) */
 
     storyService
-    .createStory(newStory)
-    .then(response=>{
-       this.props.history.goBack();
-    })
-    .catch(error => console.log(error));
+      .createStory(newStory)
+      .then(response => {
+        this.props.history.goBack();
+      })
+      .catch(error => console.log(error));
   };
 
   render() {
@@ -78,25 +77,25 @@ class NewStory extends Component {
       correct,
       creator,
       background,
-    }= this.state
+    } = this.state
 
     return (
       <div>
         <h1>New Story</h1>
         <FormStory
-        handleOnChange={this.handleOnChange}
-        handleSubmit={this.handleSubmit}
-        title={title}
-        text={text}
-        question={question}
-        answer1={answer1}
-        answer2={answer2}
-        answer3={answer3}
-        correct={correct}
-        creator={creator}
-        background={background}
+          handleOnChange={this.handleOnChange}
+          handleSubmit={this.handleSubmit}
+          title={title}
+          text={text}
+          question={question}
+          answer1={answer1}
+          answer2={answer2}
+          answer3={answer3}
+          correct={correct}
+          creator={creator}
+          background={background}
 
-          
+
         />
 
       </div>
