@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import storyService from '../services/story-service'
 
 export default class FormStory extends Component {
 

@@ -7,8 +7,8 @@ class EditStory extends Component {
   state = {
 
     idStory:"",
-    paragraph: 1,
-    text: "",
+    paragraph: "",
+
     
   }
   componentDidMount(){
@@ -40,11 +40,16 @@ class EditStory extends Component {
     const { title, paragraph, idStory } = this.state;
     const updatedStory = {
       title,
-      paragraph,
+      paragraph/* No se com fer-ho perque no detecta el change dels inputs pq no ho puc fer i l'input no es deixa editar[{
+      text,
+      question,
+
+    }] */
+
     };
 
     storyService
-      .updtateOneChallenge(idStory, updatedStory)
+      .editStory(idStory, updatedStory)
       .then(response => {
         this.props.history.goBack();
       })
@@ -52,16 +57,29 @@ class EditStory extends Component {
   };
 
   render() {
-    const{title,paragraph,idStory} = this.state
+    const{title,paragraph} = this.state
     return (
       <div>
         <h1>EDIT STORY PAGE</h1>
         <h2>{title}</h2>
         { paragraph &&
+         paragraph.map((parr,index)=>(
+         <div key={index}> 
          <FormStory
-         
+         handleOnChange={this.handleOnChange}
+         handleSubmit={this.handleSubmit}
+         text={parr.text}
+          question={parr.question}
+          answer1={parr.answer1}
+          answer2={parr.answer2}
+          answer3={parr.answer3}
+          />
+          </div>
+          ))
+
+
         
-        />}
+        }
         
       </div>
     )
