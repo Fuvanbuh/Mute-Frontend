@@ -9,7 +9,7 @@ class StoryService {
 
   }
   createStory(newStory) {
-    return this.story.post('/story/addStroy', newStory)
+    return this.story.post('/story/addStory', newStory)
       .then(response => response.data)
   };
 

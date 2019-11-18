@@ -1,96 +1,111 @@
-import React from "react";
+import React from 'react'
 
+const FormStory = (props) => {
 
-const FormStory = props => {
-  const {
-    title,
-    paragraph,
-    theme,
-    defaul,
-    question,
-    answer1,
-    answer2,
-    answer3,
-    correct,
-  } = props;
-  console.log(props + 'este es el bueno')
+    const {
+        title,
+        text,
+        question,
+        answer1,
+        answer2,
+        answer3,
+        correct,
+        creator,
+        background,
+        handleOnChange,
+        handleSubmit
+    }= props;
 
+    const submitForm = e => {
+      e.preventDefault();
+      handleSubmit(e);
+    };
+  
+    const changeInput = e => {
+      e.preventDefault();
+      handleOnChange(e);
+    };
 
-  const submitForm = e => {
-    e.preventDefault();
-    handleSubmit(e);
-  };
-  const changeInput = e => {
-    e.preventDefault();
-    handleOnChange(e);
-  };
+    return (
+        <div>
+            <h1>Esto es form story</h1>
+            <form onSubmit={submitForm}>
+                <h2>Hola {creator}</h2>
+                <label>Escoje un fondo </label>
+                {/* No se com fer-ho */}
+                <label> Titulo de la historia</label>
+                <input
+                    type="text"
+                    id="title"
+                    name="title"
+                    placeholder="Titulo"
+                    value={title}
+                    onChange={changeInput}
+                    required
+                />
+                <label>Parrafo 1</label>
+                <input
+                    type="text"
+                    id="text"
+                    name="text"
+                    placeholder="Parrafo 1"
+                    value={text}
+                    onChange={changeInput}
+                    required
+                />
 
+                <label>Pregunta</label>
+                <input
+                    type="text"
+                    id="question"
+                    name="question"
+                    placeholder="Pregunta"
+                    value={question}
+                    onChange={changeInput}
+                    required
+                />
+                <label>Respuesta1</label>
+                <input
+                    type="text"
+                    id="ansewer1"
+                    name="answer1"
+                    placeholder="Respuesta 1"
+                    value={answer1}
+                    onChange={changeInput}
+                    required
+                />
+                <label>Respuesta2</label>
+                <input
+                    type="text"
+                    id="ansewer2"
+                    name="answer2"
+                    placeholder="Respuesta 2"
+                    value={answer2}
+                    onChange={changeInput}
+                    required
+                />
+                <label>Respuesta3</label>
+                <input
+                    type="text"
+                    id="ansewer3"
+                    name="answer3"
+                    placeholder="Respuesta 3"
+                    value={answer3}
+                    onChange={changeInput}
+                    required
+                />
+                <label>Cual es la respuesta correcta?</label>
+                <select>
+                  <option value={correct} onChange={changeInput}>{answer1}</option>
+                  <option value={correct} onChange={changeInput}>{answer2}</option>
+                  <option value={correct} onChange={changeInput}>{answer3}</option>
+                  
+              </select>
 
-  return (
-    <form onSubmit={submitForm}>
-      <label>Title</label>
-      <input name="title" id="title" defaultValue={title} onChange={changeInput}></input>
-      <label>Paragraph 1</label>
-      <input
-        type="text"
-        id="pargraph"
-        name="paragraph"
-        placeholder="Paragraph 1"
-        value={paragraph}
-        onChange={changeInput}
-        required
-      />
-      <label>Pregunta</label>
-      <input
-        type="text"
-        id="question"
-        name="question"
-        placeholder="Pregunta"
-        value={question}
-        onChange={changeInput}
-        required
-      />
-      <label>Respuesta 1</label>
-      <input
-        type="text"
-        id="answer1"
-        name="answer1"
-        placeholder="answer1"
-        value={answer1}
-        onChange={changeInput}
-        required
-      />
-      <select onChange={changeInput}>
-        <option name="correct" value={correct} onChange={changeInput}>Esta es la respuesta correcta?</option>
-      </select>
-      <label>Respuesta 2</label>
-      <input
-        type="text"
-        id="answer2"
-        name="answer2"
-        placeholder="answer2"
-        value={answer2}
-        onChange={changeInput}
-        required
-      />
-      <select onChange={changeInput}>
-        <option name="correct" value={correct} onChange={changeInput}>Esta es la respuesta correcta?</option>
-      </select>
-      <label>Respuesta 3</label>
-      <input
-        type="text"
-        id="answer3"
-        name="answer3"
-        placeholder="answer3"
-        value={answer3}
-        onChange={changeInput}
-        required
-      />
-      <select onChange={changeInput}>
-        <option name="correct" value={correct} onChange={changeInput}>Esta es la respuesta correcta?</option>
-      </select>
-      <button type="submit">Submit</button>
-    </form>
-  );
-};
-export default FormStory;
+              <button>Save</button>
+            </form>
+        </div>
+    )
+}
+
+export default FormStory
