@@ -6,6 +6,12 @@ class StoryService {
       withCredentials: true,
     })
   }
+
+  getThemes() {
+    return this.story.get('/story/themes')
+      .then(response => response.data)
+  };
+
   createStory(newStory) {
     return this.story.post('/story/addStory', newStory)
       .then(response => response.data)

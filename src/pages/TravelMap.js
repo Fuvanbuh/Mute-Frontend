@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import mapService from '../services/map-service'
 import { Link } from 'react-router-dom';
+import cofre from '../images/wireframes-09.png'
 
 
 class TravelMap extends Component {
@@ -32,6 +33,9 @@ class TravelMap extends Component {
 
           )
           )}
+          <Link to='/win'>
+          <img src={cofre} alt="cofre"/>
+          </Link>
       </div>
     )
   }

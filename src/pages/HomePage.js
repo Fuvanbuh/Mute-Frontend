@@ -14,6 +14,7 @@ class HomePage extends Component {
     this.setState({
       maps: newMaps
     })
+    
   }
 
   deleteOneMap = async (mapId) => {
@@ -24,12 +25,13 @@ class HomePage extends Component {
     this.setState({
       maps: newArray
     })
+   
   }
 
 
 
   render() {
-    console.log('maps', this.state.maps)
+    
     const { maps } = this.state
     return (
       <div>

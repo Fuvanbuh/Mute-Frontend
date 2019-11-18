@@ -28,6 +28,10 @@ class MapService {
     return this.map.put(`/map/${id}/edit`)
     .then (response => response.data)
   }
+  createMap(newMap) {
+    return this.map.post('/map/addMap', newMap)
+      .then(response => response.data)
+  };
 
 
 }
