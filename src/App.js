@@ -19,6 +19,8 @@ import NewStory from './pages/NewStory.js';
 import TravelMap from './pages/TravelMap.js';
 import Lecture from './pages/Lecture.js';
 import Questions from './pages/Questions.js';
+import Win from './pages/Win.js';
+
 
 
 
@@ -39,6 +41,7 @@ class App extends Component {
               <PrivateRoute path="/travelMap/:idMap" exact component={TravelMap} />
               <PrivateRoute path="/travelMap/:idMap/path/:pathNum" exact component={Lecture} />
               <PrivateRoute path="/travelMap/:idMap/path/:pathNum/questions" exact component={Questions} />
+              <PrivateRoute path="/win" exact component={Win} />
               
               
 

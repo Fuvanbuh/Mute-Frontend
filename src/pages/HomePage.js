@@ -3,6 +3,7 @@ import mapService from '../services/map-service'
 import CardStory from '../components/CardStory'
 import withAuth from '../components/withAuth'
 
+
 class HomePage extends Component {
 
   state = {
@@ -14,6 +15,7 @@ class HomePage extends Component {
     this.setState({
       maps: newMaps
     })
+    
   }
 
   deleteOneMap = async (mapId) => {
@@ -24,17 +26,18 @@ class HomePage extends Component {
     this.setState({
       maps: newArray
     })
+   
   }
 
 
 
   render() {
-    console.log('maps', this.state.maps)
+    
     const { maps } = this.state
     return (
       <div>
         <button onClick={this.props.logout}>Logout</button>
-
+        
         <CardStory maps={maps} deleteOneMap={this.deleteOneMap} />
       </div>
     )
