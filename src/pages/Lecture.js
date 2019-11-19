@@ -10,10 +10,11 @@ import { withRouter } from 'react-router-dom';
   return (
     <div>
       <button onClick={props.history.goBack}>Back</button>
-
+      <h1>{map.story.title}</h1>
+      
       <p>{map.story.paragraph[pathNum].text}</p>
 
-      <Link to={`/travelMap/${map._id}/path/${pathNum}/questions`}>Preguntas</Link>
+      <Link to={`/travelMap/${map._id}/path/${pathNum}/questions`}>pregunta</Link>
     </div>
   )
 }

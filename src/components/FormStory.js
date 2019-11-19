@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import storyService from '../services/story-service'
 
 export default class FormStory extends Component {
 
@@ -28,7 +29,7 @@ export default class FormStory extends Component {
       paragraph,
     } = this.props;
 
-
+    console.log(themes)
     return (
       <div>
         {paragraph === 1 ? <h1>New Story</h1> : <h1>{title}</h1> }

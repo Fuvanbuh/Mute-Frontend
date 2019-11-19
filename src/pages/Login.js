@@ -58,10 +58,10 @@ class Login extends Component {
               <p>{errors}</p>
             </div>
           )}
-          <button type="submit" disabled={!mail || !password} >Log in</button>
+          <button type="submit" disabled={!mail || !password} >Inicia Sesión</button>
           <p>
-            You don't have an accout yet?
-              <Link to={'/signup'}> Signup</Link>
+            ¿Todavía no tienes cuenta?
+              <Link to={'/signup'}> Resgístrate</Link>
           </p>
         </form>
       </div>

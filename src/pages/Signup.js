@@ -54,11 +54,11 @@ class Signup extends Component {
               <p>{errors}</p>
             </div>
           )}
-          {!password || !username || !mail ? <p className="advice">All fields are required</p> : null}
-          <button type="submit" disabled={!password || !username || !mail}>Sign up</button>
+          {!password || !username || !mail ? <p className="advice">Es necesario rellenar todos los campos</p> : null}
+          <button type="submit" disabled={!password || !username || !mail}>Registrarse</button>
           <p>
-            Already have account?
-            <Link to={'/login'}> Login</Link>
+            ¿Ya tienes una cuenta?
+            <Link to={'/login'}> Inicia Sesión</Link>
           </p>
 
         </form>

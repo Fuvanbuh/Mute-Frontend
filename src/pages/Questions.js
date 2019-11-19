@@ -1,10 +1,14 @@
 import mapService from '../services/map-service'
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom';
+
 
 class Questions extends Component {
   state={
     map: null,
-    selectedOption: ""
+    selectedOption: "",
+    correctMessage: "",
+    incorrectMessage: ""
   }
 
   componentDidMount = async () => {
@@ -21,7 +25,15 @@ class Questions extends Component {
     const { idMap } = this.props.match.params
     const correct = this.state.map.story.paragraph[this.props.match.params.pathNum].correct
     if(this.state.selectedOption === correct){
+      this.setState({
+        correctMessage: "Muy bien!"
+      })
+      //console.log(this.state.correctMessage)
       await mapService.modifyPathMap(idMap)
+    } else {
+      this.setState({
+        incorrectMessage: "Respuesta incorrecta"
+      })
     }
     // console.log(this.state.map)
   }
@@ -42,7 +54,8 @@ class Questions extends Component {
    
     return (
       <div>
-        <h1>questions</h1>
+        
+        <h1>Responde la pregunta</h1>
         { map &&
         <div>
           <p>{map.story.paragraph[pathNum].question}</p>
@@ -64,6 +77,13 @@ class Questions extends Component {
 
             <button type="submit">Enviar</button>
           </form>         
+          {this.state.correctMessage?
+          <div>
+          <h5>{this.state.correctMessage}</h5>
+           <Link to={`/travelMap/${map._id}`}>Siguiente</Link>
+          </div>          
+          : <h5>{this.state.incorrectMessage}</h5>
+          }
         </div>
           
         }

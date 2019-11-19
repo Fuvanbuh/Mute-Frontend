@@ -25,6 +25,7 @@ class TravelMap extends Component {
     const { map } = this.state
     return (
       <div>
+        <Link to={'/homePage'}>Home</Link>
         {map &&
           map.story.theme.checkpoint.map((mapa, index) => (
             <Link key={index} to={{ pathname: `/travelMap/${map._id}/path/${index}`, state: { map } }}>
@@ -33,7 +34,7 @@ class TravelMap extends Component {
 
           )
           )}
-          <Link to='/win'>
+          <Link to={{ pathname: `/win`, state: { map } }}>
           <img src={cofre} alt="cofre"/>
           </Link>
       </div>
