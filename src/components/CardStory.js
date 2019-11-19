@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import withAuth from './withAuth';
+import plus from '../images/icon-17.png'
 
 
 
@@ -9,13 +10,13 @@ const CardStory = (props) => {
   console.log(maps)
   return (
     <>
-      <div>
+      <div className='container-stories'>
         {maps &&
           maps.map((mapa, index) => (
-            <div>
+            <div className='card-story'>
             <Link to={`/travelMap/${mapa._id}`} maps={maps}>
             
-               <div key={index} className='card-story' style={{ backgroundImage: `url(./images/${mapa.story.theme.background})` }}> 
+               <div key={index} style={{ backgroundImage: `url(./images/${mapa.story.theme.background})` }}> 
                 <h1>{mapa.story.title}</h1>
                 {mapa.story.creator === props.user._id ? <Link to={`/${mapa.story._id}/editStory`}>Editar</Link> : null}
                  
@@ -25,8 +26,8 @@ const CardStory = (props) => {
             </div>
           )
           )}
-        <div>
-          <Link to='/newStory'>+</Link>
+        <div className='plus-container'>
+          <Link to='/newStory'><img src={plus} alt=""/></Link>
         </div>
       </div>
     </>

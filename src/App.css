@@ -48,9 +48,7 @@ body{
   background: linear-gradient(297deg, rgba(92,18,67,1) 0%, rgba(187,70,147,1) 96%);
   
 }
-.card-story {
-  width: 25vw;
-}
+
 
 .cofre {
   opacity: 0.2;
@@ -109,7 +107,16 @@ body{
   flex-direction: column;
   align-items: center;
   justify-content: flex-start; 
+}
 
+.container-general{
+   min-height: 100vh;
+    height: auto;
+}
+
+.home-page{
+  background: url('../src/images/wireframes-03.png') no-repeat center center fixed;  
+  background-size:cover;
 }
 .container-win {
   background: url('../src/images/cdd-background-home-16.png') no-repeat center center fixed;  
@@ -131,4 +138,23 @@ body{
   font-weight: normal;
  font-size: 100px;
  color: white;
+
+.container-stories{
+  width: 95vw;
+  display:flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.card-story {  
+  height: 30vh;
+  width: 30vw;
+  margin: 0 20px;
+}
+
+.plus-container{
+  height: 30vh;
+  width: 30vw;
+  margin: 0 20px;
+  background: grey;
 }
