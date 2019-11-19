@@ -22,18 +22,31 @@ class NewStory extends Component {
     theme: null,
     themes: null,
     
+<<<<<<< HEAD
+=======
+  }
+  paraHacer = () => {
+
+>>>>>>> a8e97580a9427c7970640882fe04bb52dd989d55
   }
 
   componentDidMount = async () => {
     const getThemes = await storyService.getThemes();
+<<<<<<< HEAD
     
     this.setState({
       themes: getThemes,
     })
+=======
+    console.log(getThemes)
+    this.setState({
+      themes: getThemes,
+    })
+    
+>>>>>>> a8e97580a9427c7970640882fe04bb52dd989d55
   }
 
  async createStory() {
-
     const {
       title,
       theme,
@@ -49,25 +62,19 @@ class NewStory extends Component {
       idStory,
     }
 
-    
-    
-
     const story = await storyService.createStory(newStory)
     
     this.setState({
       idStory: story._id
     })
-    
 
    const newMap = {
      completePath,
      story: story._id,
      userId,
    }
-   console.log(newMap)
-   
-    const map = await mapService.createMap(newMap)
 
+   const map = await mapService.createMap(newMap)
 
     this.addParagraph()
   }
@@ -91,6 +98,7 @@ class NewStory extends Component {
       answer3,
       correct,
     }
+    
     const paragraphUptaded = await storyService.editStory(idStory, { $push: { paragraph: updatedPar } })
 
     await this.setState({
