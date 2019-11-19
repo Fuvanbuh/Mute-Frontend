@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import cofre from '../images/wireframes-09.png'
 
 
+
 class TravelMap extends Component {
   state = {
     map: null,
@@ -16,13 +17,15 @@ class TravelMap extends Component {
     this.setState({
       map: oneMap
     })
-    console.log(oneMap)
+    
   }
 
 
   render() {
 
     const { map } = this.state
+    const copy = {...map}
+    
     return (
       <div>
         {map &&
@@ -33,9 +36,11 @@ class TravelMap extends Component {
 
           )
           )}
-          <Link to='/win'>
-          <img src={cofre} alt="cofre"/>
-          </Link>
+          {copy.completePath < 6?<Link  to='/win'>
+          <img className='cofre' src={cofre} alt="cofre"/>
+          </Link>: <Link  to='/win'>
+          <img  src={cofre} alt="cofre"/>
+          </Link>}
       </div>
     )
   }

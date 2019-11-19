@@ -20,19 +20,22 @@ class NewStory extends Component {
     correct: "",
     theme: null,
     themes: null,
+    
+  }
+  paraHacer = () => {
+
   }
 
   componentDidMount = async () => {
     const getThemes = await storyService.getThemes();
-
+    console.log(getThemes)
     this.setState({
       themes: getThemes,
     })
-
+    
   }
 
  async createStory() {
-
     const {
       title,
       theme,
@@ -48,25 +51,19 @@ class NewStory extends Component {
       idStory,
     }
 
-    
-    
-
     const story = await storyService.createStory(newStory)
     
     this.setState({
       idStory: story._id
     })
-    
 
    const newMap = {
      completePath,
      story: story._id,
      userId,
    }
-   console.log(newMap)
-   
-    const map = await mapService.createMap(newMap)
 
+   const map = await mapService.createMap(newMap)
 
     this.addParagraph()
   }
@@ -90,6 +87,7 @@ class NewStory extends Component {
       answer3,
       correct,
     }
+    
     const paragraphUptaded = await storyService.editStory(idStory, { $push: { paragraph: updatedPar } })
 
     await this.setState({
@@ -136,7 +134,7 @@ class NewStory extends Component {
       themes,
       paragraph,
     } = this.state
-console.log(themes)
+
     return (
       <div>
         
