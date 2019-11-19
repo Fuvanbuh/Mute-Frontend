@@ -23,7 +23,7 @@ class Questions extends Component {
     if(this.state.selectedOption === correct){
       await mapService.modifyPathMap(idMap)
     }
-    console.log(this.state.map)
+    // console.log(this.state.map)
   }
 
   
