@@ -43,22 +43,21 @@ class Signup extends Component {
   render() {
     const { mail, password, username, errors } = this.state;
     return (
-      <div>
-
-        <form onSubmit={this.handleFormSubmit}>
-          <input id="username" type="text" name="username" value={username} placeholder="Username" required onChange={this.handleChange} />
-          <input id="email" type="email" name="mail" value={mail} placeholder="Email" required onChange={this.handleChange} />
-          <input id="password" type="password" name="password" value={password} placeholder="Password" required onChange={this.handleChange} />
+      <div className='container-signup'>
+        <form className='container-form' onSubmit={this.handleFormSubmit}>
+          <input className='inputs' id="username" type="text" name="username" value={username} placeholder="Username" required onChange={this.handleChange} />
+          <input className='inputs' id="email" type="email" name="mail" value={mail} placeholder="Email" required onChange={this.handleChange} />
+          <input className='inputs' id="password" type="password" name="password" value={password} placeholder="Password" required onChange={this.handleChange} />
           {errors && (
             <div class="errors">
               <p>{errors}</p>
             </div>
           )}
           {!password || !username || !mail ? <p className="advice">Es necesario rellenar todos los campos</p> : null}
-          <button type="submit" disabled={!password || !username || !mail}>Registrarse</button>
+          <button className='btn-none btn ' type="submit" disabled={!password || !username || !mail}>Registrarse</button>
           <p>
             ¿Ya tienes una cuenta?
-            <Link to={'/login'}> Inicia Sesión</Link>
+            <Link className='link' to={'/login'}> Inicia Sesión</Link>
           </p>
 
         </form>

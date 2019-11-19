@@ -32,10 +32,10 @@ class Login extends Component {
     const { mail, password, errors } = this.state;
     return (
 
-      <div>
+      <div className='container-login'>
 
-        <form onSubmit={this.handleFormSubmit}>
-          <input
+        <form className='container-form' onSubmit={this.handleFormSubmit}>
+          <input className='inputs'
             id="email"
             type="email"
             name="mail"
@@ -44,7 +44,7 @@ class Login extends Component {
             required
             onChange={this.handleChange}
           />
-          <input
+          <input className='inputs'
             id="password"
             type="password"
             name="password"
@@ -58,10 +58,10 @@ class Login extends Component {
               <p>{errors}</p>
             </div>
           )}
-          <button type="submit" disabled={!mail || !password} >Inicia Sesión</button>
+          <button className='btn-none btn' type="submit" disabled={!mail || !password} >Inicia Sesión</button>
           <p>
             ¿Todavía no tienes cuenta?
-              <Link to={'/signup'}> Resgístrate</Link>
+              <Link className='link' to={'/signup'}> Resgístrate</Link>
           </p>
         </form>
       </div>

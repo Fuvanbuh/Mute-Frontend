@@ -1,26 +1,52 @@
-.App {
-  text-align: center;
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
+body{
+  font-family: 'Dosis', sans-serif;
 }
-
-.App-header {
-  background-color: #282c34;
+.container-welcome{
+  background: url('../src/images/cdd-background-home-16.png') no-repeat center center fixed;
   min-height: 100vh;
+  height: auto;
+  color:white;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+
+}
+
+.container-welcome>img{
+  width: 70%;
+  margin-bottom: 50px;
+  margin-top: 10px;
+}
+.container-welcome>h1{
+  font-weight: normal;
+ font-size: 80px;
+}
+.btn-none{
+  all: unset;
+}
+.btn{
+  text-decoration: none;
   color: white;
+  padding: 10px 0px;
+  width: 60%;
+  text-align: center;
+  margin:10px 0px;
+  border-radius: 10px;
+  font-size: 25px;
+  font-weight: bold;
+  background: rgb(92,18,67);
+  background: linear-gradient(297deg, rgba(92,18,67,1) 0%, rgba(187,70,147,1) 96%);
+  
 }
-
-.App-link {
-  color: #09d3ac;
-}
-
 .card-story {
   width: 25vw;
 }
@@ -29,4 +55,58 @@
   opacity: 0.2;
   filter: alpha(opacity=50);
   pointer-events: none; /* For IE8 and earlier */
+}
+.container-signup{
+  background: url('../src/images/wireframesrotate-16.png') no-repeat center center fixed;
+  background-size:cover;
+  min-height: 100vh;
+  height: auto;
+  color:white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  
+
+}
+.inputs{
+  width: 80%;
+  padding: 3px;
+  margin: 7px auto;
+  border-radius: 5px;
+  border: 2px solid #8a00a2;
+
+}
+.container-form{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 90%;
+  margin: 30px auto;
+  
+  
+}
+.container-form button{
+  margin: 20px auto;
+}
+.container-form p {
+  color: #bb4693;
+  font-weight: bold;
+}
+
+.link{
+  text-decoration: none;
+  
+}
+.container-login{
+  background: url('../src/images/wireframes-01.png') no-repeat center center fixed;  
+  background-size:cover;
+  min-height: 100vh;
+  height: auto;
+  color:white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; 
+
 }
