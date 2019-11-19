@@ -22,28 +22,14 @@ class NewStory extends Component {
     theme: null,
     themes: null,
     
-<<<<<<< HEAD
-=======
-  }
-  paraHacer = () => {
-
->>>>>>> a8e97580a9427c7970640882fe04bb52dd989d55
   }
 
   componentDidMount = async () => {
     const getThemes = await storyService.getThemes();
-<<<<<<< HEAD
     
     this.setState({
       themes: getThemes,
     })
-=======
-    console.log(getThemes)
-    this.setState({
-      themes: getThemes,
-    })
-    
->>>>>>> a8e97580a9427c7970640882fe04bb52dd989d55
   }
 
  async createStory() {

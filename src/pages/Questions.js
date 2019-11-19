@@ -28,7 +28,7 @@ class Questions extends Component {
       this.setState({
         correctMessage: "Muy bien!"
       })
-      //console.log(this.state.correctMessage)
+      
       await mapService.modifyPathMap(idMap)
     } else {
       this.setState({
@@ -54,7 +54,7 @@ class Questions extends Component {
    
     return (
       <div>
-        
+        <button onClick={this.props.history.goBack}>Back</button>
         <h1>Responde la pregunta</h1>
         { map &&
         <div>

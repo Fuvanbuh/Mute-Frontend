@@ -36,7 +36,7 @@ class HomePage extends Component {
     const { maps } = this.state
     return (
       <div>
-        <button onClick={this.props.logout}>Logout</button>
+        <button onClick={this.props.logout}>Cerrar Sesión</button>
         
         <CardStory maps={maps} deleteOneMap={this.deleteOneMap} />
       </div>
