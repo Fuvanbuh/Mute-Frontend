@@ -30,16 +30,26 @@ class TravelMap extends Component {
       <div>
         <Link to={'/homePage'}>Home</Link>
         {map &&
-          map.story.theme.checkpoint.map((mapa, index) => (
-            <Link key={index} to={{ pathname: `/travelMap/${map._id}/path/${index}`, state: { map } }}>
-              <img src={require(`../images/${mapa}`)} alt="planet chekpoint" />
-            </Link>
+          map.story.theme.checkpoint.map((mapa, index) =>{
+          
+            if(index < copy.completePath ){
+              return (
+                <Link key={index} to={{ pathname: `/travelMap/${map._id}/path/${index}`, state: { map } }}>
+                  <img  src={require(`../images/${mapa}`)} alt="planet chekpoint" />
+                </Link>
+              )
+            }else{
+              return(
+                <img className='cofre' key={index} src={require(`../images/${mapa}`)} alt="planet chekpoint" />
+              )
+            }
+          }
 
-          )
+            
           )}
-          {copy.completePath < 6?<Link  to='/win'>
+          {copy.completePath < 6?
           <img className='cofre' src={cofre} alt="cofre"/>
-          </Link>: <Link  to='/win'>
+          : <Link  to='/win'>
           <img  src={cofre} alt="cofre"/>
           </Link>}
       </div>
