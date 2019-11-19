@@ -8,6 +8,7 @@
 
 body{
   font-family: 'Dosis', sans-serif;
+  
 }
 .container-welcome{
   background: url('../src/images/cdd-background-home-16.png') no-repeat center center fixed;
@@ -117,6 +118,26 @@ body{
   background: url('../src/images/wireframes-03.png') no-repeat center center fixed;  
   background-size:cover;
 }
+.container-win {
+  background: url('../src/images/cdd-background-home-16.png') no-repeat center center fixed;  
+  background-size:cover;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center;
+  
+  
+}
+.container-win img {
+  width: 100px;
+  
+}
+.container-win h1{
+  font-weight: normal;
+ font-size: 100px;
+ color: white;
 
 .container-stories{
   width: 95vw;
