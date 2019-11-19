@@ -23,6 +23,7 @@ class NewStory extends Component {
     themes: null,
     
   }
+  
 
   componentDidMount = async () => {
     const getThemes = await storyService.getThemes();
