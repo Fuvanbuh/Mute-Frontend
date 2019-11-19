@@ -6,6 +6,7 @@ import FormStory from '../components/FormStory'
 import mapService from '../services/map-service';
 
 class NewStory extends Component {
+ 
   state = {
     completePath: 1,
     userId: "",
@@ -20,19 +21,19 @@ class NewStory extends Component {
     correct: "",
     theme: null,
     themes: null,
+    
   }
+  
 
   componentDidMount = async () => {
     const getThemes = await storyService.getThemes();
-
+    
     this.setState({
       themes: getThemes,
     })
-
   }
 
  async createStory() {
-
     const {
       title,
       theme,
@@ -48,25 +49,19 @@ class NewStory extends Component {
       idStory,
     }
 
-    
-    
-
     const story = await storyService.createStory(newStory)
     
     this.setState({
       idStory: story._id
     })
-    
 
    const newMap = {
      completePath,
      story: story._id,
      userId,
    }
-   console.log(newMap)
-   
-    const map = await mapService.createMap(newMap)
 
+   const map = await mapService.createMap(newMap)
 
     this.addParagraph()
   }
@@ -137,6 +132,7 @@ class NewStory extends Component {
       paragraph,
     } = this.state
 
+  
     return (
       <div>
         

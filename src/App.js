@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Switch } from 'react-router-dom';
+import { BrowserRouter as Router,Route,  Switch } from 'react-router-dom';
 
 import PrivateRoute from './components/PrivateRoute.js';
 import AnonRoute from './components/AnonRoute.js';
@@ -9,6 +9,7 @@ import Welcome from './pages/Welcome'
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import HomePage from './pages/HomePage';
+import NotFound from './pages/NotFound'
 
 import AuthProvider from './contexts/auth-context.js';
 
@@ -45,6 +46,7 @@ class App extends Component {
               
 
               {/* <PrivateRoute path="/home" exact component={Home} /> */}
+              <Route component={NotFound} />
             </Switch>
           </div>
         </AuthProvider>

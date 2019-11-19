@@ -24,3 +24,9 @@
 .card-story {
   width: 25vw;
 }
+
+.cofre {
+  opacity: 0.2;
+  filter: alpha(opacity=50);
+  pointer-events: none; /* For IE8 and earlier */
+}

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import cofre from '../images/wireframes-09.png'
 
 
+
 class TravelMap extends Component {
   state = {
     map: null,
@@ -16,26 +17,40 @@ class TravelMap extends Component {
     this.setState({
       map: oneMap
     })
-    console.log(oneMap)
+    
   }
 
 
   render() {
 
     const { map } = this.state
+    const copy = {...map}
+    
     return (
       <div>
+        <Link to={'/homePage'}>Salir</Link>
         {map &&
-          map.story.theme.checkpoint.map((mapa, index) => (
-            <Link key={index} to={{ pathname: `/travelMap/${map._id}/path/${index}`, state: { map } }}>
-              <img src={require(`../images/${mapa}`)} alt="planet chekpoint" />
-            </Link>
-
-          )
+          map.story.theme.checkpoint.map((mapa, index) =>{
+          
+            if(index < copy.completePath ){
+              return (
+                <Link key={index} to={{ pathname: `/travelMap/${map._id}/path/${index}`, state: { map } }}>
+                  <img  src={require(`../images/${mapa}`)} alt="planet chekpoint" />
+                </Link>
+              )
+            }else{
+              return(
+                <img className='cofre' key={index} src={require(`../images/${mapa}`)} alt="planet chekpoint" />
+              )
+            }
+          }
+            
           )}
-          <Link to='/win'>
-          <img src={cofre} alt="cofre"/>
-          </Link>
+          {copy.completePath < 6?
+          <img className='cofre' src={cofre} alt="cofre"/>
+          : <Link  to='/win'>
+          <img  src={cofre} alt="cofre"/>
+          </Link>}
       </div>
     )
   }

@@ -6,10 +6,10 @@ import mute from '../images/mute-01.png'
 const Welcome = () => {
   return (
     <div>
-      <h1>Welcome Page</h1>
+      <h1>Mute</h1>
       <img width='150'src={mute} alt="mute" />
-      <Link to="/login">Log in</Link>
-      <Link to="/signup">Sign up</Link>
+      <Link to="/login">Iniciar Sesión</Link>
+      <Link to="/signup">Registrarse</Link>
 
     </div>
   )
