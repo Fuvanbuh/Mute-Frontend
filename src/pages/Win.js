@@ -1,21 +1,21 @@
 import React, { Component } from 'react'
 import star from '../images/price-01.png'
 import mute from '../images/mute-01.png'
+import Confetti from 'react-confetti'
 
-
-export default class Win extends Component {
+export default (props) => {
   
-  render() {
-    //const {price} = this.props.location.state.map.story.theme
-    // console.log(this.props.location.state.map.story)
-    return (
-      <div>
+  return (
+    <div className='container-win'>
+      
+        <Confetti  />
         <h1>win</h1>
-        <img src={star} alt="star"/>
-        <img src={mute} alt="mute"/>
-        
-      </div>
-    )
-  }
+        <img src={star} alt="star" />
+        <img src={mute} alt="mute" />
+      
+
+    </div>
+  )
 }
+
 
