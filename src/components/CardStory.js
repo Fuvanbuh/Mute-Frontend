@@ -17,11 +17,11 @@ const CardStory = (props) => {
             
                <div key={index} className='card-story' style={{ backgroundImage: `url(./images/${mapa.story.theme.background})` }}> 
                 <h1>{mapa.story.title}</h1>
-                {mapa.story.creator === props.user._id ? <Link to={`/${mapa.story._id}/editStory`}>edit</Link> : null}
+                {mapa.story.creator === props.user._id ? <Link to={`/${mapa.story._id}/editStory`}>Editar</Link> : null}
                  
               </div>
             </Link>
-            <button onClick={() => props.deleteOneMap(mapa._id)} >Delete</button>
+            <button onClick={() => props.deleteOneMap(mapa._id)} >Eliminar</button>
             </div>
           )
           )}

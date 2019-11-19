@@ -32,7 +32,7 @@ class Questions extends Component {
       await mapService.modifyPathMap(idMap)
     } else {
       this.setState({
-        incorrectMessage: "Respuesta incorrecta"
+        incorrectMessage: "No es correcta"
       })
     }
     // console.log(this.state.map)
@@ -75,7 +75,7 @@ class Questions extends Component {
                 checked={this.state.selectedOption === 'answer3'}
                 onChange={this.handleOptionChange}/> {map.story.paragraph[pathNum].answer3} </label>
 
-            <button type="submit">Enviar</button>
+            <button type="submit">Comprobar</button>
           </form>         
           {this.state.correctMessage?
           <div>

@@ -28,7 +28,7 @@ class TravelMap extends Component {
     
     return (
       <div>
-        <Link to={'/homePage'}>Home</Link>
+        <Link to={'/homePage'}>Salir</Link>
         {map &&
           map.story.theme.checkpoint.map((mapa, index) =>{
           
@@ -44,7 +44,6 @@ class TravelMap extends Component {
               )
             }
           }
-
             
           )}
           {copy.completePath < 6?

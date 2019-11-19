@@ -16,7 +16,7 @@ import { withRouter } from 'react-router-dom';
       <h2>Parte {(pathNum * 1 + 1)}</h2>
       <p>{map.story.paragraph[pathNum].text}</p>
 
-      {map.completePath === (pathNum*1+1)  ? <Link to={`/travelMap/${map._id}/path/${pathNum}/questions`}>pregunta</Link> : null}
+      {map.completePath === (pathNum*1+1)  ? <Link to={`/travelMap/${map._id}/path/${pathNum}/questions`}>Responde la pregunta</Link> : null}
     </div>
   )
 }
