@@ -112,7 +112,8 @@ class EditStory extends Component {
       answer1,
       answer2,
       answer3,
-      correct
+      correct,
+      paragraph
     } = this.state
     return ( <div >
 
@@ -125,6 +126,7 @@ class EditStory extends Component {
 
       </form>        
       <h1>EDIT STORY PAGE</h1>
+      <h2>Parrafo {(paragraph*1+1)}</h2>
                 
       <FormStory
         handleOnChange={this.handleOnChange}
