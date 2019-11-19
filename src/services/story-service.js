@@ -16,8 +16,17 @@ class StoryService {
     return this.story.post('/story/addStory', newStory)
       .then(response => response.data)
   };
-  editStory(id, updatedStory) {
-    return this.story.put(`/story/${id}/edit`, updatedStory)
+  addParagraph(id, updatedStory) {
+    return this.story.put(`/story/${id}/addParagraph`, updatedStory)
+      .then(response => response.data)
+  }
+  editParagraph(id, updatedParagraph, paragraphNumber) {
+    //mirar qué párrafo tenemos que modificar
+    const data = {
+      updatedParagraph,
+      paragraphNumber
+    }
+    return this.story.put(`/story/${id}/edit`, data)
       .then(response => response.data)
   }
   getOneStory(id) {

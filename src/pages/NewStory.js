@@ -90,7 +90,7 @@ class NewStory extends Component {
       answer3,
       correct,
     }
-    const paragraphUptaded = await storyService.editStory(idStory, { $push: { paragraph: updatedPar } })
+    const paragraphUptaded = await storyService.addParagraph(idStory, { $push: { paragraph: updatedPar } })
 
     await this.setState({
       paragraph: this.state.paragraph + 1,
