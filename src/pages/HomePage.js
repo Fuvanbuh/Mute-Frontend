@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import mapService from '../services/map-service'
 import CardStory from '../components/CardStory'
 import withAuth from '../components/withAuth'
+import logout from '../images/log-out-01.png'
 
 
 class HomePage extends Component {
@@ -36,7 +37,7 @@ class HomePage extends Component {
     const { maps } = this.state
     return (
       <div className='container-general home-page'>
-        <button onClick={this.props.logout}>Cerrar Sesión</button>        
+        <button className="btn-none" onClick={this.props.logout}><img className="logout-img" width="30" src={logout} alt=""/></button>        
         <CardStory maps={maps} deleteOneMap={this.deleteOneMap} />
       </div>
     )
