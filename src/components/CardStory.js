@@ -18,17 +18,19 @@ const CardStory = (props) => {
             <div className="parent-card-story">
 
               <Link to={`/travelMap/${mapa._id}`} maps={maps}>
-
                 <div className="card-story" key={index} style={{ backgroundImage: `url(./images/${mapa.story.theme.background}) `, backgroundSize: "cover"  }}> 
                   <h1>{mapa.story.title}</h1>
+                  <img width="50" src={require(`../images/${mapa.story.theme.checkpoint[0]}`)}/>
                 </div>
-
               </Link>
+
               <div className="buttons-container">
                 {mapa.story.creator === props.user._id ? <Link to={`/${mapa.story._id}/editStory`}><img src={edit} width="25" alt="" />
                 </Link> : null}
+                
                 <button className="btn-none" onClick={() => props.deleteOneMap(mapa._id)} ><img src={iconDelete} width="25" alt="trush"/></button>
               </div>
+
             </div>
           )
           )}
