@@ -158,18 +158,23 @@ body{
   background: url('../src/images/wireframes-03.png') no-repeat center center fixed;  
   background-size:cover;
 }
-.container-win {
+.container-general-win {
   background: url('../src/images/cdd-background-home-16.png') no-repeat center center fixed;  
   background-size:cover;
   width: 100%;
   height: auto;
   min-height: 100vh;
   overflow: hidden;
+  
+}
+.container-win{
   display: flex;
   flex-direction: column;
   justify-content: space-around; 
   align-items: center;
+
 }
+
 .container-win canvas{
   width: 100%;
   height: auto
@@ -180,10 +185,7 @@ body{
   z-index: 100;
   
 }
-.come-back{
-  width: 20px;
-  left: 0%;
-}
+
 .container-win h1{
   text-align: center;
  font-weight: bold;
@@ -196,6 +198,7 @@ body{
 .star{
   transform: translateX(-1200px);
   animation: animStar 1s ease 1s forwards;
+  margin:20px;
 }
 @keyframes animStar {
   0% {
