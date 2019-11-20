@@ -72,23 +72,30 @@ body{
   background: linear-gradient(297deg, rgba(92,18,67,1) 0%, rgba(187,70,147,1) 96%);
 }
 .text-info{
-  background-color:  rgb(243, 236, 241,0.7);
-  min-height: 300px;
-  width: 75%;
-  margin: 50% auto;
-  text-align: center;
-  z-index: 1000;
-  position: absolute;
-  top: 0;
-  left: 50px;
-  border-radius: 20px;
+    background-color: rgb(243, 236, 241,1.5);
+    min-height: 300px;
+    width: 85;
+    margin: 65px auto;
+    text-align: center;
+    z-index: 1000;
+    position: absolute;
+    top: 0;
+    left: 30px;
+    border-radius: 20px;
+    width: 85%;
+    padding: 20px;
   
 }
-
+.information{
+  width: 90%;
+  padding: 10px;
+  text-align: center;
+  font-size:1.5rem;
+}
 .btn-home{
   display: flex;
   justify-content: space-between;
-  margin: 5px;
+  padding: 5px;
 }
 
 .container-welcome>img{

@@ -1,14 +1,15 @@
 import mapService from '../services/map-service'
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import goBack from '../images/goBack.png'
 
 class Questions extends Component {
   state={
     map: null,
     selectedOption: "",
-    correctMessage: "",
-    incorrectMessage: ""
+    // correctMessage: "",
+    incorrectMessage: "",
+    redirect: null,
   }
 
   componentDidMount = async () => {
@@ -26,11 +27,10 @@ class Questions extends Component {
     const { idMap } = this.props.match.params
     const correct = this.state.map.story.paragraph[this.props.match.params.pathNum].correct
     if(this.state.selectedOption === correct){
-      this.setState({
-        correctMessage: "Muy bien!"
-      })
-      
       await mapService.modifyPathMap(idMap)
+      this.setState({
+        redirect : true,
+      })
     } else {
       this.setState({
         incorrectMessage: "No es correcta"
@@ -78,13 +78,11 @@ class Questions extends Component {
 
             <button className='btn-none' type="submit">Comprobar</button>
           </form>         
-          {this.state.correctMessage?
-          <div>
-          <h5>{this.state.correctMessage}</h5>
-           <Link to={`/travelMap/${map._id}`}>Siguiente</Link>
-          </div>          
-          : <h5>{this.state.incorrectMessage}</h5>
+          {this.state.redirect&&
+           <Redirect to={`/travelMap/${map._id}`} />       
           }
+
+            {this.state.incorrectMessage && <h5>{this.state.incorrectMessage}</h5>}
         </div>
           
         }

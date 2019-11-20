@@ -51,7 +51,7 @@ class HomePage extends Component {
           <button className="btn-none btn-home" onClick={this.handleShowI}><img width="30" src={info} alt="" /></button>
         </div>
 
-        {showI ? <div className='text-info'> <span > Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore nostrum minima, qui nihil pariatur optio unde iusto impedit quod, sint nobis consequuntur iure. Quae rem modi, quia nihil quo praesentium!z</span> </div> : null}
+        {showI ? <div className='text-info'> <span className="information"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore nostrum minima, qui nihil pariatur optio unde iusto impedit quod, sint nobis consequuntur iure. Quae rem modi, quia nihil quo praesentium!z</span> </div> : null}
         <CardStory maps={maps} deleteOneMap={this.deleteOneMap} />
       </div>
     )
