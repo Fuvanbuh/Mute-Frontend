@@ -385,4 +385,26 @@ body{
   flex-direction: column;
   width: 90%;
   color: white;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+}
+
+.container-form-story h1{
+font-size: 50px;
+}
+
+.container-story{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+}
+
+.container-story > input{
+  width: 100%;
+}
+.label{
+  margin:10px 0;
+  font-size: 25px;
 }
