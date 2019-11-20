@@ -59,7 +59,7 @@ class EditStory extends Component {
           answer3: response.data.paragraph[0].answer3,
           correct: response.data.paragraph[0].correct,
         })
-        console.log(this.state)
+        
       })
       .catch(error => console.log(error));
 
@@ -105,13 +105,11 @@ class EditStory extends Component {
 
   render() {
     const {
-      title,
       text,
       question,
       answer1,
       answer2,
       answer3,
-      correct,
       paragraph
     } = this.state
     return ( <div >
