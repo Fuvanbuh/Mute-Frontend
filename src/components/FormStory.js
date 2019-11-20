@@ -34,8 +34,8 @@ export default class FormStory extends Component {
 
         <form className="container-form"onSubmit={this.submitForm}>
           {paragraph === 1 ?
-            <div>
-              <label>Escoje un fondo </label>
+            <div className="container-story">
+              <label className="label">Escoje un fondo </label>
 
 
 
@@ -47,9 +47,8 @@ export default class FormStory extends Component {
                   ))
                 }
               </select>
-              <label> Titulo de la historia</label>
+              <label className="label"> Titulo de la historia</label>
               <input
-                className="input"
                 type="text"
                 id="title"
                 name="title"
@@ -59,9 +58,9 @@ export default class FormStory extends Component {
                 required
               /> </div> :  null}
 
-          <label>Parrafo {paragraph}</label>
+          <label className="label" >Parrafo {paragraph}</label>
 
-          <input
+          <textarea rows="20"
             type="text"
             id="text"
             name="text"
@@ -71,7 +70,7 @@ export default class FormStory extends Component {
             required
           />
 
-          <label>Pregunta</label>
+          <label className="label" >Pregunta</label>
           <input
             type="text"
             id="question"
@@ -81,7 +80,7 @@ export default class FormStory extends Component {
             onChange={this.changeInput}
             required
           />
-          <label>Respuesta1</label>
+          <label className="label" >Respuesta1</label>
           <input
             type="text"
             id="ansewer1"
@@ -91,7 +90,7 @@ export default class FormStory extends Component {
             onChange={this.changeInput}
             required
           />
-          <label>Respuesta2</label>
+          <label className="label" >Respuesta2</label>
           <input
             type="text"
             id="ansewer2"
@@ -101,7 +100,7 @@ export default class FormStory extends Component {
             onChange={this.changeInput}
             required
           />
-          <label>Respuesta3</label>
+          <label className="label" >Respuesta3</label>
           <input
             type="text"
             id="ansewer3"
@@ -111,7 +110,7 @@ export default class FormStory extends Component {
             onChange={this.changeInput}
             required
           />
-          <label>Cual es la respuesta correcta?</label>
+          <label className="label">Cual es la respuesta correcta?</label>
           <select onChange={this.changeInput}>
             <option value={correct}>{answer1}</option>
             <option value={correct}>{answer2}</option>

@@ -58,7 +58,7 @@ class Login extends Component {
               <p>{errors}</p>
             </div>
           )}
-          <button className='btn-none btn' type="submit" disabled={!mail || !password} >Inicia Sesión</button>
+          <button className='btn-none btn-general' type="submit" disabled={!mail || !password} >Inicia Sesión</button>
           <p>
             ¿Todavía no tienes cuenta?
               <Link className='link' to={'/signup'}> Resgístrate</Link>
