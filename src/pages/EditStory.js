@@ -41,7 +41,6 @@ class EditStory extends Component {
   }
 
   componentDidMount() {
-    console.log('holaaaaaaa')
     const {
       idStory
     } = this.props.match.params

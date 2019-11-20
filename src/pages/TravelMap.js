@@ -9,8 +9,8 @@ class TravelMap extends Component {
   state = {
     map: null,
   }
-
-
+  
+  
   componentDidMount = async () => {
     const { idMap } = this.props.match.params
     const oneMap = await mapService.getTheMap(idMap);
@@ -20,22 +20,20 @@ class TravelMap extends Component {
     
   }
 
-
   render() {
 
     const { map } = this.state
     const copy = {...map}
     
     return (
-      <div>
-        <Link to={'/homePage'}>Salir</Link>
+      <div className="container-travel-map">
         {map &&
           map.story.theme.checkpoint.map((mapa, index) =>{
           
             if(index < copy.completePath ){
               return (
                 <Link key={index} to={{ pathname: `/travelMap/${map._id}/path/${index}`, state: { map } }}>
-                  <img  src={require(`../images/${mapa}`)} alt="planet chekpoint" />
+                 <img  src={require(`../images/${mapa}`)} alt="planet chekpoint" />
                 </Link>
               )
             }else{
@@ -51,6 +49,7 @@ class TravelMap extends Component {
           : <Link  to='/win'>
           <img  src={cofre} alt="cofre"/>
           </Link>}
+        <Link to={'/homePage'}>Salir</Link>
       </div>
     )
   }

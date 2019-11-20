@@ -53,7 +53,7 @@ class Questions extends Component {
     const {map} = this.state
    
     return (
-      <div>
+      <div >
         <button onClick={this.props.history.goBack}>Back</button>
         <h1>Responde la pregunta</h1>
         { map &&
