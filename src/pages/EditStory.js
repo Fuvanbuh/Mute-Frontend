@@ -60,7 +60,7 @@ class EditStory extends Component {
           answer3: response.data.paragraph[0].answer3,
           correct: response.data.paragraph[0].correct,
         })
-        console.log(this.state)
+        
       })
       .catch(error => console.log(error));
 
