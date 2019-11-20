@@ -38,8 +38,7 @@ class EditStory extends Component {
   changeParagraph=(event)=>{
     const parIndex = event.target.value
     this.loadParagraph(parIndex);
-    //recogemos el "change" del radio button y seteamos el state con el nuevo número de párrafo
-    //llamamos a loadParagraph
+  
   }
 
   componentDidMount() {
@@ -76,6 +75,12 @@ class EditStory extends Component {
       [name]: value
     });
   };
+
+  goBacktoHome = () =>{
+    this.props.history.goBack()
+  }
+
+
   handleSubmit = event => {
     event.preventDefault();
     const {
@@ -97,12 +102,15 @@ class EditStory extends Component {
       correct,
     };
 
+   
     storyService
       .editParagraph(idStory, updatedParagraph, paragraph)
       .then(response => {
         this.props.history.goBack();
       })
       .catch(error => console.log(error));
+
+     
   };
 
   render() {
@@ -130,6 +138,7 @@ class EditStory extends Component {
       <h2 className="center-text" >Parrafo {(paragraph*1+1)}</h2>
                 
       <FormStory
+        goBacktoHome={this.goBacktoHome}
         handleOnChange={this.handleOnChange}
         handleSubmit={this.handleSubmit}
         text={text}
