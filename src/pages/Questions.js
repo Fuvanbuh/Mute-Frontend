@@ -77,7 +77,7 @@ class Questions extends Component {
                 checked={this.state.selectedOption === 'answer3'}
                 onChange={this.handleOptionChange}/> {map.story.paragraph[pathNum].answer3} </label>
 
-            <button className='btn-none btn-general' type="submit">Comprobar</button>
+            <button className='btn-none btn-general btn-question' type="submit">Comprobar</button>
           </form>         
           {this.state.redirect&&
            <Redirect to={`/travelMap/${map._id}`} />       

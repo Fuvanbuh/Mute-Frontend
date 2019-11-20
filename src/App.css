@@ -206,8 +206,8 @@ body{
 }
 
 .container-win img {
-  width: 200px;
-  z-index: 100;
+ z-index: 100;
+  width: 50vw;
   
 }
 
@@ -216,7 +216,6 @@ body{
  font-weight: bold;
  color: white;
  margin: 0 auto;
- margin-top:50px;
  z-index: 100;
  width: 80%;
 }
@@ -336,7 +335,6 @@ body{
   flex-direction: column;
 }
 .container-story{
-  margin-top: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -353,18 +351,16 @@ body{
   text-align: center;
   margin-bottom: 35px;
   color: white;
-
 }
 
 .story-text{
-  width: 80%;
-  font-size: 35px;
+  width: 90vw;
+  font-size: 1.6rem;
   text-align: center;
   margin-bottom: 20px;
   line-height: 1.6;
   font-weight: 400;
   color: white;
-
 }
 
 .not-found{
@@ -391,7 +387,6 @@ body{
   flex-direction: column;
 }
 .container-questions{
-  margin-top: 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -413,18 +408,17 @@ body{
   
 }
 .container-questions div p{
-     margin: 20px;
-    font-size: x-large;
-    font-weight: bold;
+  margin: 20px;
+  font-size: 1.5rem;
 
 }
 
-.container-questions div form{display: flex;
+.container-questions div form{
+  display: flex;
   align-items: center;
   flex-direction: column;
-  margin: 20px}
-
-
+  margin: 20px
+}
   
 
 .goback-icon{
@@ -536,11 +530,12 @@ input[type=radio] {
   border: 0px !important;
   width: 80% !important;
   height: 2em !important;
-  margin: 10px;
-  font-size: x-large;
-  font-weight: bold;
-  
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
 }
+
+
 .label-question input{
   border: 0px !important;
   margin-right: 9px;
@@ -549,4 +544,8 @@ input[type=radio] {
 }
 .message{
   font-size: x-large;
+}
+
+.btn-question{
+  margin-top: 50px;
 }
