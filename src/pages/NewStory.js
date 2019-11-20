@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom';
 import storyService from '../services/story-service'
+import { Link } from 'react-router-dom';
+import goBack from '../images/goBack.png'
 
 import FormStory from '../components/FormStory'
 import mapService from '../services/map-service';
@@ -135,6 +137,8 @@ class NewStory extends Component {
   
     return (
       <div className="container-newstory">
+       <Link className='goback-icon come-back' to={'/homePage'}><img src={goBack} width='50px' alt='go back' /></Link>
+
         
         { paragraph < 6 ? <FormStory
           handleOnChange={this.handleOnChange}

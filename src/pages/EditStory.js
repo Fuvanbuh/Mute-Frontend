@@ -2,6 +2,8 @@ import React, {
   Component
 } from 'react'
 import storyService from '../services/story-service'
+import { Link } from 'react-router-dom';
+import goBack from '../images/goBack.png'
 
 import FormStory from '../components/FormStory'
 
@@ -112,18 +114,20 @@ class EditStory extends Component {
       answer3,
       paragraph
     } = this.state
-    return ( <div >
+    return ( <div className="container-newstory">
+      <Link className='goback-icon come-back' to={'/homePage'}><img src={goBack} width='50px' alt='go back' /></Link>
 
-      <form id="changeParagraph">
+
+      <label className="edit-label" >¿Qué párrafo quieres editar?</label>
+      <form className="edit-select"id="changeParagraph">
         <input type="radio" name="paragraph" onChange={this.changeParagraph} value="0" defaultChecked /> 1
         <input type="radio" name="paragraph" onChange={this.changeParagraph} value="1" /> 2
         <input type="radio" name="paragraph" onChange={this.changeParagraph} value="2" /> 3
         <input type="radio" name="paragraph" onChange={this.changeParagraph} value="3" /> 4
         <input type="radio" name="paragraph" onChange={this.changeParagraph} value="4" /> 5
-
       </form>        
-      <h1>EDIT STORY PAGE</h1>
-      <h2>Parrafo {(paragraph*1+1)}</h2>
+      <h1 className="center-text">Edita tu historia</h1>
+      <h2 className="center-text" >Parrafo {(paragraph*1+1)}</h2>
                 
       <FormStory
         handleOnChange={this.handleOnChange}
