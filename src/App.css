@@ -137,6 +137,8 @@ body{
 }
 .container-win canvas{
   width: 100%;
+  min-height: 100vh;
+  height: auto;
 }
 
 .container-win img {
@@ -149,7 +151,6 @@ body{
  color: white;
  margin: 0 auto;
  margin-top:50px;
- 
  width: 80%;
 }
 .star{
