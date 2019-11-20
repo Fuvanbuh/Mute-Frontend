@@ -134,7 +134,7 @@ class NewStory extends Component {
 
   
     return (
-      <div>
+      <div className="container-newstory">
         
         { paragraph < 6 ? <FormStory
           handleOnChange={this.handleOnChange}
