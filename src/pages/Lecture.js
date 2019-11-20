@@ -14,7 +14,7 @@ import question from '../images/question-01.png'
 
   return (
     <div className="container-lecture">
-      <button  className="goback-icon"onClick={props.history.goBack}><img src={goBack} width="50px" alt="go back"/></button>
+      <button className="btn-none goback-icon"onClick={props.history.goBack}><img src={goBack} width="50px" alt="go back"/></button>
       <div className="container-story">
       <h1 className="story-title">{map.story.title}</h1>
       <h2 className="story-part">Parte {(pathNum * 1 + 1)}</h2>
