@@ -330,6 +330,20 @@ body{
   flex-direction: row;
   justify-content: center;
   margin:20px 0;
+}
 
+.container-newstory{
+  background: url('../src/images/cdd-background-home-16.png') no-repeat center center;  
+  background-size:cover;
+  min-height: 100vh;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
 
+.container-form-story{
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  color: white;
 }
