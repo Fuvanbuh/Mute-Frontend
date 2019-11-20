@@ -23,18 +23,16 @@ export default class FormStory extends Component {
       answer2,
       answer3,
       correct,
-      // creator,
-      // theme,
       themes,
       paragraph,
     } = this.props;
 
-    console.log(themes)
+    
     return (
-      <div>
+      <div className="container-form-story">
         {paragraph === 1 ? <h1>New Story</h1> : <h1>{title}</h1> }
 
-        <form onSubmit={this.submitForm}>
+        <form className="container-form"onSubmit={this.submitForm}>
           {paragraph === 1 ?
             <div>
               <label>Escoje un fondo </label>
@@ -51,6 +49,7 @@ export default class FormStory extends Component {
               </select>
               <label> Titulo de la historia</label>
               <input
+                className="input"
                 type="text"
                 id="title"
                 name="title"

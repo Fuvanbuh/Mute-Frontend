@@ -35,13 +35,12 @@ class Questions extends Component {
         incorrectMessage: "No es correcta"
       })
     }
-    // console.log(this.state.map)
+   
   }
 
   
 
   handleOptionChange = (event) => {    
-    console.log(event.target.value)
     this.setState ({
       selectedOption: event.target.value
     })
@@ -53,9 +52,10 @@ class Questions extends Component {
     const {map} = this.state
    
     return (
-      <div className='container-questions' >
-        <button  className='goback-icon btn-none' onClick={this.props.history.goBack}><img src={goBack} width='50px' alt='go back'/></button>
-        <h1>Responde la pregunta:</h1>
+      <div className='container-general-questions' >
+        <button  className='btn-none goback-icon' onClick={this.props.history.goBack}><img src={goBack} width='50px' alt='go back'/></button>
+        <div className='container-questions'>
+          <h1>Responde la pregunta:</h1>
         { map &&
         <div>
           <p>{map.story.paragraph[pathNum].question}</p>
@@ -75,7 +75,7 @@ class Questions extends Component {
                 checked={this.state.selectedOption === 'answer3'}
                 onChange={this.handleOptionChange}/> {map.story.paragraph[pathNum].answer3} </label>
 
-            <button type="submit">Comprobar</button>
+            <button className='btn-none' type="submit">Comprobar</button>
           </form>         
           {this.state.correctMessage?
           <div>
@@ -87,6 +87,7 @@ class Questions extends Component {
         </div>
           
         }
+      </div>
       </div>
     )
   }

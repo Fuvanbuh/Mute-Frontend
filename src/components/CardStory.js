@@ -9,7 +9,7 @@ import edit from '../images/edit-01.png'
 
 const CardStory = (props) => {
   const { maps } = props
-  console.log(maps)
+  
   return (
     <>
       <div className='container-stories'>

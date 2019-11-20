@@ -172,6 +172,7 @@ body{
 }
 .container-win canvas{
   width: 100%;
+  height: auto
 }
 
 .container-win img {
@@ -179,9 +180,28 @@ body{
   
 }
 .container-win h1{
- font-weight: normal;
- font-size: 250px;
- color: white;}
+  text-align: center;
+ font-weight: bold;
+ color: white;
+ margin: 0 auto;
+ margin-top:50px;
+ 
+ width: 80%;
+}
+.star{
+  transform: translateX(-1200px);
+  animation: animStar 1s ease 1s forwards;
+}
+@keyframes animStar {
+  0% {
+    transform: translateY(1200px)
+  }
+
+  100% {
+    transform: translateY(0)
+  }
+
+}
  
  
 
@@ -323,15 +343,20 @@ body{
 .not-found a{
   margin-top: 40px;
 }
-.container-questions{
+.container-general-questions{
   background: url('../src/images/cdd-background-home-16.png') no-repeat center center;  
   background-size:cover;
   min-height: 100vh;
   height: auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
+}
+.container-questions{
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
 
 }  
 .container-questions div{
@@ -365,8 +390,22 @@ body{
     font-size: x-large;
     font-weight: bold;
   }
-
-
+  .container-questions div form button{
+    
+      text-decoration: none;
+      color: white;
+      padding: 20px 30px;
+      width: 60%;
+      text-align: center;
+      margin:10px 0px;
+      border-radius: 10px;
+      font-size: 25px;
+      font-weight: bold;
+      background: rgb(92,18,67);
+      background: linear-gradient(297deg, rgba(92,18,67,1) 0%, rgba(187,70,147,1) 96%);
+      
+    
+  }
 
 .goback-icon{
   display: flex;
@@ -378,8 +417,22 @@ body{
   flex-direction: row;
   justify-content: center;
   margin:20px 0;
+}
 
+.container-newstory{
+  background: url('../src/images/cdd-background-home-16.png') no-repeat center center;  
+  background-size:cover;
+  min-height: 100vh;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
 
+.container-form-story{
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  color: white;
 }
 
 .go-back-left{

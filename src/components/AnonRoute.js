@@ -3,7 +3,7 @@ import { Route, Redirect } from 'react-router-dom';
 import withAuth from './withAuth';
 
 const AnonRoute = (props) => {
-  console.log(props)
+  
   const { isLoggedIn, component: Component, ...rest } = props;
   return (
     <>
