@@ -177,7 +177,12 @@ body{
 
 .container-win img {
   width: 200px;
+  z-index: 100;
   
+}
+.come-back{
+  width: 20px;
+  left: 0%;
 }
 .container-win h1{
   text-align: center;
@@ -185,7 +190,7 @@ body{
  color: white;
  margin: 0 auto;
  margin-top:50px;
- 
+ z-index: 100;
  width: 80%;
 }
 .star{

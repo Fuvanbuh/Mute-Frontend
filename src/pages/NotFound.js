@@ -7,7 +7,7 @@ const NotFound = () => {
   return (
     <div className='not-found'>
       
-      <Link className='goback-icon' to={'/homePage'}><img src={goBack} width='50px' alt='go back'/></Link>
+      <Link className='goback-icon ' to={'/homePage'}><img src={goBack} width='50px' alt='go back'/></Link>
 
     </div>
   )

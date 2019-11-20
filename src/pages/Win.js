@@ -2,11 +2,16 @@ import React, { Component } from 'react'
 import star from '../images/price-01.png'
 import cofreAbierto from '../images/cofre-abierto.png'
 import Confetti from 'react-confetti'
+import { Link } from 'react-router-dom';
+import goBack from '../images/goBack.png'
 
-export default (props) => {
+
+
+export default () => {
 
   return (
     <div className='container-win'>
+      <Link className='goback-icon come-back' to={'/homePage'}><img src={goBack} width='50px' alt='go back' /></Link>
 
 
       <Confetti />
