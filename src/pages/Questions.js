@@ -2,6 +2,7 @@ import mapService from '../services/map-service'
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 import goBack from '../images/goBack.png'
+import goNext from '../images/image-next.png'
 
 class Questions extends Component {
   state={
@@ -20,7 +21,7 @@ class Questions extends Component {
     
   }
 
-  
+
   handleFormSubmit  = async (event) => {
     event.preventDefault()
     const { idMap } = this.props.match.params
@@ -61,29 +62,29 @@ class Questions extends Component {
         <div>
           <p>{map.story.paragraph[pathNum].question}</p>
           <form onSubmit={this.handleFormSubmit}>
-            <label>
-              <input type="radio" value="answer1"
+            <label className='label-question'>
+              <input  type="radio" value="answer1"
                 checked={this.state.selectedOption === 'answer1'}
                 onChange={this.handleOptionChange}/>{map.story.paragraph[pathNum].answer1}</label>
 
-            <label>
-              <input type="radio" value="answer2"
+            <label className='label-question'>
+              <input  type="radio" value="answer2"
                 checked={this.state.selectedOption === 'answer2'}
                 onChange={this.handleOptionChange}/> {map.story.paragraph[pathNum].answer2}</label>
 
-            <label>
-              <input type="radio" value="answer3"
+            <label className='label-question'>
+              <input  type="radio" value="answer3"
                 checked={this.state.selectedOption === 'answer3'}
                 onChange={this.handleOptionChange}/> {map.story.paragraph[pathNum].answer3} </label>
 
-            <button className='btn-none' type="submit">Comprobar</button>
+            <button className='btn-none btn-general' type="submit">Comprobar</button>
           </form>         
           {this.state.correctMessage?
           <div>
-          <h5>{this.state.correctMessage}</h5>
-           <Link to={`/travelMap/${map._id}`}>Siguiente</Link>
+          <h5 className='message'>{this.state.correctMessage}</h5>
+           <Link to={`/travelMap/${map._id}`}><img src={goNext} width='50px' alt='go next'/></Link>
           </div>          
-          : <h5>{this.state.incorrectMessage}</h5>
+          : <h5 className='message'>{this.state.incorrectMessage}</h5>
           }
         </div>
           

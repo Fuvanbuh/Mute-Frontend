@@ -82,7 +82,6 @@ body{
   top: 0;
   left: 50px;
   border-radius: 20px;
-  
 }
 
 .btn-home{
@@ -417,27 +416,8 @@ body{
   flex-direction: column;
   margin: 20px}
 
-.container-questions div form label{
-    margin: 10px;
-    font-size: x-large;
-    font-weight: bold;
-  }
-  .container-questions div form button{
-    
-      text-decoration: none;
-      color: white;
-      padding: 20px 30px;
-      width: 60%;
-      text-align: center;
-      margin:10px 0px;
-      border-radius: 10px;
-      font-size: 25px;
-      font-weight: bold;
-      background: rgb(92,18,67);
-      background: linear-gradient(297deg, rgba(92,18,67,1) 0%, rgba(187,70,147,1) 96%);
-      
-    
-  }
+
+  
 
 .goback-icon{
   display: flex;
@@ -534,7 +514,6 @@ font-size: 50px;
 }
 
 .edit-select input{
-  
   font-size: 25px;
   color: white;
   padding: 10px;
@@ -544,4 +523,22 @@ input[type=radio] {
   border: 0px;
   width: 7%;
   height: 2em;
+}
+.label-question{
+  border: 0px !important;
+  width: 80% !important;
+  height: 2em !important;
+  margin: 10px;
+  font-size: x-large;
+  font-weight: bold;
+  
+}
+.label-question input{
+  border: 0px !important;
+  margin-right: 9px;
+  width: 15%;
+  height: 2em !important;
+}
+.message{
+  font-size: x-large;
 }
