@@ -17,23 +17,24 @@ class TravelMap extends Component {
     this.setState({
       map: oneMap
     })
-    
   }
-
+  
   render() {
-
+    
     const { map } = this.state
     const copy = {...map}
     
+    console.log(this.state.map)
     return (
-      <div className="container-travel-map">
-        {map &&
-          map.story.theme.checkpoint.map((mapa, index) =>{
+      <>
+      {map ? (
+        <div className="container-travel-map"  style={{ backgroundImage: `url(./../images/${map.story.theme.background})` }}> 
+          {map.story.theme.checkpoint.map((mapa, index) =>{
           
             if(index < copy.completePath ){
               return (
                 <Link key={index} to={{ pathname: `/travelMap/${map._id}/path/${index}`, state: { map } }}>
-                 <img  src={require(`../images/${mapa}`)} alt="planet chekpoint" />
+                <img  src={require(`../images/${mapa}`)} alt="planet chekpoint" />
                 </Link>
               )
             }else{
@@ -41,16 +42,19 @@ class TravelMap extends Component {
                 <img className='cofre' key={index} src={require(`../images/${mapa}`)} alt="planet chekpoint" />
               )
             }
-          }
-            
+          } 
           )}
+
           {copy.completePath < 6?
           <img className='cofre' src={cofre} alt="cofre"/>
           : <Link  to='/win'>
           <img  src={cofre} alt="cofre"/>
           </Link>}
-        <Link to={'/homePage'}>Salir</Link>
-      </div>
+
+          <Link to={'/homePage'}>Salir</Link>
+        </div>) 
+      : null}
+      </>
     )
   }
 }

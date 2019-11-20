@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import withAuth from './withAuth';
 import plus from '../images/icon-17.png';
 import iconDelete from '../images/delete-01.png'
+import edit from '../images/edit-01.png'
+
 
 
 const CardStory = (props) => {
@@ -17,15 +19,16 @@ const CardStory = (props) => {
 
               <Link to={`/travelMap/${mapa._id}`} maps={maps}>
 
-                <div className="card-story" key={index} style={{ backgroundImage: `url(./images/${mapa.story.theme.background})` }}> 
+                <div className="card-story" key={index} style={{ backgroundImage: `url(./images/${mapa.story.theme.background}) `, backgroundSize: "cover"  }}> 
                   <h1>{mapa.story.title}</h1>
-                  {mapa.story.creator === props.user._id ? <Link to={`/${mapa.story._id}/editStory`}>Editar
-                  </Link> : null}
                 </div>
 
               </Link>
-
-              <button className="btn-none" onClick={() => props.deleteOneMap(mapa._id)} ><img src={iconDelete} width="25" alt="trush"/></button>
+              <div className="buttons-container">
+                {mapa.story.creator === props.user._id ? <Link to={`/${mapa.story._id}/editStory`}><img src={edit} width="25" alt="" />
+                </Link> : null}
+                <button className="btn-none" onClick={() => props.deleteOneMap(mapa._id)} ><img src={iconDelete} width="25" alt="trush"/></button>
+              </div>
             </div>
           )
           )}
