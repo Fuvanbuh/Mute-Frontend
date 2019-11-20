@@ -8,8 +8,8 @@ const Welcome = () => {
     <div className="container-welcome">
       <h1>mute</h1>
       <img src={mute} alt="mute" />
-      <Link className="btn" to="/login">Iniciar Sesión</Link>
-      <Link className="btn"to="/signup">Registrarse</Link>
+      <Link className="btn-welcome" to="/login">Iniciar Sesión</Link>
+      <Link className="btn-welcome"to="/signup">Registrarse</Link>
 
     </div>
   )
