@@ -1,11 +1,13 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
+import goBack from '../images/goBack.png'
 
 
 const NotFound = () => {
   return (
-    <div>
+    <div className='not-found'>
       
-      <h1>404 not found</h1>
+      <Link to={'/homePage'}><img src={goBack} width='50px' alt='go back'/></Link>
 
     </div>
   )

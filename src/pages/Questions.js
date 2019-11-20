@@ -1,7 +1,7 @@
 import mapService from '../services/map-service'
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
-
+import goBack from '../images/goBack.png'
 
 class Questions extends Component {
   state={
@@ -53,9 +53,9 @@ class Questions extends Component {
     const {map} = this.state
    
     return (
-      <div >
-        <button onClick={this.props.history.goBack}>Back</button>
-        <h1>Responde la pregunta</h1>
+      <div className='container-questions' >
+        <button  className='goback-icon btn-none' onClick={this.props.history.goBack}><img src={goBack} width='50px' alt='go back'/></button>
+        <h1>Responde la pregunta:</h1>
         { map &&
         <div>
           <p>{map.story.paragraph[pathNum].question}</p>

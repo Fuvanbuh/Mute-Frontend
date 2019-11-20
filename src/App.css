@@ -123,23 +123,29 @@ body{
 .container-win {
   background: url('../src/images/cdd-background-home-16.png') no-repeat center center fixed;  
   background-size:cover;
-  height: 100vh;
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: center; 
+  justify-content: space-around; 
   align-items: center;
-  
-  
 }
+.container-win canvas{
+  width: 100%;
+}
+
 .container-win img {
-  width: 100px;
+  width: 200px;
   
 }
 .container-win h1{
-  font-weight: normal;
- font-size: 100px;
+ font-weight: normal;
+ font-size: 250px;
  color: white;}
+ 
+ 
 
 .container-stories{
   width: 95vw;
@@ -180,12 +186,7 @@ body{
   justify-content: center;
 }
 
-.plus-container{
-  height: 30vh;
-  width: 30vw;
-  margin: 0 20px;
-  background: grey;
-}
+
 
 .container-travel-map{
   display:flex;
@@ -235,3 +236,64 @@ body{
   line-height: 1.6;
   font-weight: 400;
 }
+
+.not-found{
+  background: url('../src/images/404-16.png') no-repeat center center; 
+  background-size:cover;
+  width: 100vw;
+  min-height: 100vh;
+  height: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center; 
+  
+  
+}
+.not-found a{
+  margin-top: 40px;
+}
+.container-questions{
+  background: url('../src/images/cdd-background-home-16.png') no-repeat center center;  
+  background-size:cover;
+  min-height: 100vh;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}  
+.container-questions div{
+  color: aliceblue;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+}
+.container-questions h1{
+  margin:20px;
+  color: aliceblue;
+  
+}
+.container-questions div p{
+     margin: 20px;
+    font-size: x-large;
+    font-weight: bold;
+
+}
+
+.container-questions div form{display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 20px}
+
+.container-questions div form label{
+    margin: 10px;
+    font-size: x-large;
+    font-weight: bold;
+  }
+
+
+

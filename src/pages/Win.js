@@ -7,11 +7,10 @@ export default (props) => {
   
   return (
     <div className='container-win'>
-      
         <Confetti  />
-        <h1>win</h1>
+        <h1>win!!</h1>
         <img src={star} alt="star" />
-        <img src={mute} alt="mute" />
+        <img className='mute-win' src={mute} alt="mute" />
       
 
     </div>
