@@ -35,13 +35,12 @@ class Questions extends Component {
         incorrectMessage: "No es correcta"
       })
     }
-    // console.log(this.state.map)
+   
   }
 
   
 
   handleOptionChange = (event) => {    
-    console.log(event.target.value)
     this.setState ({
       selectedOption: event.target.value
     })

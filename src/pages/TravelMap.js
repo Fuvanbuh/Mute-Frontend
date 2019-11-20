@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import mapService from '../services/map-service'
 import { Link } from 'react-router-dom';
 import cofre from '../images/wireframes-09.png'
+import goBack from '../images/goBack.png'
 
 
 
@@ -24,7 +25,7 @@ class TravelMap extends Component {
     const { map } = this.state
     const copy = {...map}
     
-    console.log(this.state.map)
+    
     return (
       <>
       {map ? (
@@ -51,9 +52,10 @@ class TravelMap extends Component {
           <img  src={cofre} alt="cofre"/>
           </Link>}
 
-          <Link to={'/homePage'}>Salir</Link>
+          <Link className="go-back-travel-map" to={'/homePage'}> <img width="50" src={goBack} alt="" /></Link>
         </div>) 
       : null}
+        
       </>
     )
   }
