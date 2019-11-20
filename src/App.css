@@ -137,8 +137,7 @@ body{
 }
 .container-win canvas{
   width: 100%;
-  min-height: 100vh;
-  height: auto;
+  height: auto
 }
 
 .container-win img {
@@ -151,6 +150,7 @@ body{
  color: white;
  margin: 0 auto;
  margin-top:50px;
+ 
  width: 80%;
 }
 .star{
@@ -270,6 +270,7 @@ body{
 }
 
 .story-text{
+  font-family: 'Pacifico', cursive;
   width: 80%;
   font-size: 35px;
   text-align: center;

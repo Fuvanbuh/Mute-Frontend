@@ -21,7 +21,6 @@ class StoryService {
       .then(response => response.data)
   }
   editParagraph(id, updatedParagraph, paragraphNumber) {
-    //mirar qué párrafo tenemos que modificar
     const data = {
       updatedParagraph,
       paragraphNumber

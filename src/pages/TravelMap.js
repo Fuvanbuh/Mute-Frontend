@@ -24,7 +24,7 @@ class TravelMap extends Component {
     const { map } = this.state
     const copy = {...map}
     
-    console.log(this.state.map)
+    
     return (
       <>
       {map ? (

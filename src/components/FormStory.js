@@ -23,13 +23,11 @@ export default class FormStory extends Component {
       answer2,
       answer3,
       correct,
-      // creator,
-      // theme,
       themes,
       paragraph,
     } = this.props;
 
-    console.log(themes)
+    
     return (
       <div>
         {paragraph === 1 ? <h1>New Story</h1> : <h1>{title}</h1> }
