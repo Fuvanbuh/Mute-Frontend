@@ -138,8 +138,8 @@ body{
   font-weight: normal;
  font-size: 100px;
  color: white;
-
-.container-stories{
+}
+.container-stories {
   width: 95vw;
   display:flex;
   flex-wrap: wrap;
