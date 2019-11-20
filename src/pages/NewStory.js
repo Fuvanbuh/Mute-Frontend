@@ -63,7 +63,7 @@ class NewStory extends Component {
      userId,
    }
 
-   const map = await mapService.createMap(newMap)
+   await mapService.createMap(newMap)
 
     this.addParagraph()
   }
@@ -87,7 +87,7 @@ class NewStory extends Component {
       answer3,
       correct,
     }
-    const paragraphUptaded = await storyService.addParagraph(idStory, { $push: { paragraph: updatedPar } })
+    await storyService.addParagraph(idStory, { $push: { paragraph: updatedPar } })
 
     await this.setState({
       paragraph: this.state.paragraph + 1,
@@ -119,6 +119,9 @@ class NewStory extends Component {
       this.addParagraph()
     }
   };
+  goBacktoHome = () =>{
+    this.props.history.goBack()
+  }
 
   render() {
     const {
@@ -141,6 +144,7 @@ class NewStory extends Component {
 
         
         { paragraph < 6 ? <FormStory
+          goBacktoHome={this.goBacktoHome}
           handleOnChange={this.handleOnChange}
           handleSubmit={this.handleSubmit}
           title={title}
@@ -153,9 +157,7 @@ class NewStory extends Component {
           theme={theme}
           themes={themes}
           paragraph={paragraph}
-        />: <div>
-          <p>Ya has creado la historia</p>
-            <button onClick={this.props.history.goBack}>Back to Home</button></div>}
+        />: null}
       </div>
     )
   }

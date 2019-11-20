@@ -15,12 +15,12 @@ const CardStory = (props) => {
       <div className='container-stories'>
         {maps &&
           maps.map((mapa, index) => (
-            <div className="parent-card-story">
+            <div key={index} className="parent-card-story">
 
               <Link to={`/travelMap/${mapa._id}`} maps={maps}>
-                <div className="card-story" key={index} style={{ backgroundImage: `url(./images/${mapa.story.theme.background}) `, backgroundSize: "cover"  }}> 
+                <div className="card-story" style={{ backgroundImage: `url(./images/${mapa.story.theme.background}) `, backgroundSize: "cover"  }}> 
                   <h1>{mapa.story.title}</h1>
-                  <img width="50" src={require(`../images/${mapa.story.theme.checkpoint[0]}`)}/>
+                  <img width="50" src={require(`../images/${mapa.story.theme.checkpoint[0]}`)} alt="checkpoint"/>
                 </div>
               </Link>
 

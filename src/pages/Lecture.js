@@ -21,7 +21,7 @@ import question from '../images/question-01.png'
       <p className="story-text">{map.story.paragraph[pathNum].text}</p>
       </div>
 
-      {map.completePath === (pathNum*1+1)  ? <Link className="lecture-questions"to={`/travelMap/${map._id}/path/${pathNum}/questions`}><img src={question} width="60px"></img></Link> : null}
+      {map.completePath === (pathNum*1+1)  ? <Link className="lecture-questions"to={`/travelMap/${map._id}/path/${pathNum}/questions`}><img src={question} width="60px" alt="pregunta"></img></Link> : null}
     </div>
   )
 }

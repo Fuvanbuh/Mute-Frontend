@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import star from '../images/price-01.png'
 import cofreAbierto from '../images/cofre-abierto.png'
 import Confetti from 'react-confetti'

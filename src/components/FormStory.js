@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 
-import storyService from '../services/story-service'
 
 
 export default class FormStory extends Component {
@@ -14,8 +13,7 @@ export default class FormStory extends Component {
     e.preventDefault();
     this.props.handleOnChange(e);
   };
-
-
+  
   render() {
     const {
       title,
@@ -28,7 +26,6 @@ export default class FormStory extends Component {
       themes,
       paragraph,
     } = this.props;
-
     
     return (
       <>
@@ -64,7 +61,7 @@ export default class FormStory extends Component {
 
           <label className="label" >Párrafo {paragraph}</label>
 
-          <textarea className="paragraph-textarea" rows="20"
+          <textarea className="paragraph-textarea" rows="10"
           
             type="text"
             id="text"
@@ -115,14 +112,14 @@ export default class FormStory extends Component {
             onChange={this.changeInput}
             required
           />
-          <label className="label">Cual es la respuesta correcta?</label>
+          <label className="label">¿Cuál es la respuesta correcta?</label>
           <select className="custom-select" onChange={this.changeInput}>
             <option value={correct}>{answer1}</option>
             <option value={correct}>{answer2}</option>
             <option value={correct}>{answer3}</option>
 
           </select>
-          {paragraph <= 4 ? <button className="btn-none btn-welcome">Siguiente</button> : <button className="btn-none btn-welcome">Guardar</button>}
+          {paragraph <= 4 ? <button className="btn-none btn-welcome">Siguiente</button> : <button className="btn-none btn-welcome" onClick={this.props.goBacktoHome}>Guardar</button>}
 
         </form>
       </div>
