@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
+
 import storyService from '../services/story-service'
+
 
 export default class FormStory extends Component {
 
@@ -29,7 +31,9 @@ export default class FormStory extends Component {
 
     
     return (
+      <>
       <div className="container-form-story">
+
         {paragraph === 1 ? <h1>New Story</h1> : <h1>{title}</h1> }
 
         <form className="container-form"onSubmit={this.submitForm}>
@@ -39,7 +43,7 @@ export default class FormStory extends Component {
 
 
 
-              <select name="theme" onChange={this.changeInput} >
+              <select className="custom-select" name="theme" onChange={this.changeInput} >
                 <option>Selecciona </option>
                 {
                   themes && themes.map((theme, index) => (
@@ -49,22 +53,23 @@ export default class FormStory extends Component {
               </select>
               <label className="label"> Titulo de la historia</label>
               <input
+                className="inputs inputs-form"
                 type="text"
                 id="title"
                 name="title"
-                placeholder="Titulo"
                 value={title}
                 onChange={this.changeInput}
                 required
               /> </div> :  null}
 
-          <label className="label" >Parrafo {paragraph}</label>
+          <label className="label" >Párrafo {paragraph}</label>
 
-          <textarea rows="20"
+          <textarea className="paragraph-textarea" rows="20"
+          
             type="text"
             id="text"
             name="text"
-            placeholder={`Parrafo ${paragraph}`}
+            placeholder={`Este es el párrafo ${paragraph}. Máximo de 250 carácterers`}
             value={text}
             onChange={this.changeInput}
             required
@@ -72,55 +77,56 @@ export default class FormStory extends Component {
 
           <label className="label" >Pregunta</label>
           <input
+            className="inputs inputs-form"
             type="text"
             id="question"
             name="question"
-            placeholder="Pregunta"
             value={question}
             onChange={this.changeInput}
             required
           />
-          <label className="label" >Respuesta1</label>
+          <label className="label" >Respuesta 1</label>
           <input
+            className="inputs inputs-form"
             type="text"
             id="ansewer1"
             name="answer1"
-            placeholder="Respuesta 1"
             value={answer1}
             onChange={this.changeInput}
             required
           />
-          <label className="label" >Respuesta2</label>
+          <label className="label" >Respuesta 2</label>
           <input
+            className="inputs inputs-form"
             type="text"
             id="ansewer2"
             name="answer2"
-            placeholder="Respuesta 2"
             value={answer2}
             onChange={this.changeInput}
             required
           />
-          <label className="label" >Respuesta3</label>
+          <label className="label" >Respuesta 3</label>
           <input
+            className="inputs inputs-form"
             type="text"
             id="ansewer3"
             name="answer3"
-            placeholder="Respuesta 3"
             value={answer3}
             onChange={this.changeInput}
             required
           />
           <label className="label">Cual es la respuesta correcta?</label>
-          <select onChange={this.changeInput}>
+          <select className="custom-select" onChange={this.changeInput}>
             <option value={correct}>{answer1}</option>
             <option value={correct}>{answer2}</option>
             <option value={correct}>{answer3}</option>
 
           </select>
-          {paragraph <= 4 ? <button>Next</button> : <button>Finish</button>}
+          {paragraph <= 4 ? <button className="btn-none btn-welcome">Siguiente</button> : <button className="btn-none btn-welcome">Guardar</button>}
 
         </form>
       </div>
+      </>
     )
   }
 }

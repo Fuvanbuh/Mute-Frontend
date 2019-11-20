@@ -104,7 +104,7 @@ body{
 
 }
 .inputs{
- width: 80vw;
+   width: 80vw;
     padding: 10px;
     margin: 7px auto;
     border-style: none;
@@ -459,4 +459,61 @@ font-size: 50px;
 .label{
   margin:10px 0;
   font-size: 25px;
+}
+
+.custom-select {
+  width: 100%;
+  margin: 0 auto;
+  padding: 10px;
+  border: 1px solid #3C1C78;
+  background-color: white;
+  z-index: 10;
+  font-family: Dosis;
+  font-size:22px;
+}
+
+
+.inputs-form{
+ 
+   color:white;
+
+}
+
+.paragraph-textarea{
+  font-family: Dosis;
+  font-size:25px;
+
+}
+
+.center-text{
+  
+  color:white;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.edit-label{
+  color: white;
+  text-align: center;
+  font-size: 27px;
+}
+
+.edit-select{
+  color: white;
+  padding: 10px;
+  margin:20px 10px;
+  text-align: center;
+}
+
+.edit-select input{
+  
+  font-size: 25px;
+  color: white;
+  padding: 10px;
+  margin:0px 10px;
+}
+input[type=radio] {
+  border: 0px;
+  width: 7%;
+  height: 2em;
 }
