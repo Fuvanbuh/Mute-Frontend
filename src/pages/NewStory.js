@@ -21,7 +21,7 @@ class NewStory extends Component {
     answer2: "",
     answer3: "",
     correct: "",
-    theme: null,
+    theme: '',
     themes: null,
     
   }
