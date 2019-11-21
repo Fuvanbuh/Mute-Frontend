@@ -13,7 +13,7 @@ export default class FormStory extends Component {
     e.preventDefault();
     this.props.handleOnChange(e);
   };
-  
+
   render() {
     const {
       theme,
@@ -24,10 +24,12 @@ export default class FormStory extends Component {
       answer2,
       answer3,
       correct,
+      theme,
       themes,
       paragraph,
     } = this.props;
-    
+
+
     return (
       <>
       <div className="container-form-story">
