@@ -17,6 +17,7 @@ body{
 
 .container-welcome{
   background: url('../src/images/cdd-background-home-16.png') no-repeat center center fixed;
+  background-size: cover;
   min-height: 100vh;
   height: auto;
   color:white;
@@ -99,7 +100,8 @@ body{
 }
 
 .container-welcome>img{
-  width: 70%;
+  width: 50vw;
+  max-width: 600px;
   margin-bottom: 50px;
   margin-top: 10px;
 }
@@ -130,27 +132,43 @@ body{
 }
 .inputs{
    width: 80vw;
-    padding: 10px;
-    margin: 7px auto;
     border-style: none;
     box-shadow: none;
     border-bottom: 1.5px solid #8a00a2;
     font-size: 1.2rem;
     background-color: transparent;
     text-align: center;
-
+    padding: 5px 0;
 }
+
+.inputs-auth {
+  width: 80vw;
+    padding: 10px;
+    margin: 7px auto;
+    border-style: none;
+    box-shadow: none;
+    border-bottom: 1.5px solid #8A00A2;
+    font-size: 1.2rem;
+    background-color: transparent;
+    text-align: center;
+}
+
 .container-form{
   display: flex;
   flex-direction: column;
-  text-align: center;
-  width: 90%;
-  margin: 30px auto;
-  
-  
+  text-align: center; 
 }
+
+.margin-login {
+  margin-top: 30px;
+}
+
+.margin-bottom {
+  margin-bottom: 20px;
+}
+
 .container-form button{
-  margin: 20px auto;
+  margin: 40px auto;
 }
 
 .container-form p {
@@ -302,6 +320,7 @@ body{
 .go-back-travel-map {
   align-self: flex-start;
   margin-left: -15px;
+  margin-top: 10px;
 }
  
 
@@ -423,7 +442,9 @@ body{
 
 .goback-icon{
   display: flex;
-  margin: 20px;
+  margin-top: 10px;
+  margin-left: 10px;
+  align-self: flex-start;
 }
 
 .lecture-questions{
@@ -440,6 +461,8 @@ body{
   height: auto;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  padding-bottom: 30px;
 }
 
 .container-form-story{
@@ -448,12 +471,11 @@ body{
   width: 90%;
   color: white;
   justify-content: center;
-  align-items: center;
-  margin: 20px auto;
+  align-items: center;  
 }
 
 .container-form-story h1{
-font-size: 50px;
+  font-size: 2.5rem;
 }
 
 .container-story{
@@ -467,8 +489,9 @@ font-size: 50px;
   width: 100%;
 }
 .label{
-  margin:10px 0;
-  font-size: 25px;
+  margin-top: 40px;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
 }
 
 .custom-select {
@@ -480,6 +503,7 @@ font-size: 50px;
   z-index: 10;
   font-family: Dosis;
   font-size:22px;
+  border-radius: 10px;
 }
 
 
@@ -491,8 +515,8 @@ font-size: 50px;
 
 .paragraph-textarea{
   font-family: Dosis;
-  font-size:25px;
-
+  font-size: 1.5rem;
+  border-radius: 10px;
 }
 
 .center-text{
@@ -506,6 +530,7 @@ font-size: 50px;
   color: white;
   text-align: center;
   font-size: 27px;
+  margin-top: 30px;
 }
 
 .edit-select{
@@ -513,6 +538,7 @@ font-size: 50px;
   padding: 10px;
   margin:20px 10px;
   text-align: center;
+  width: 80vw;
 }
 
 .edit-select input{

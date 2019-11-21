@@ -34,8 +34,8 @@ class Login extends Component {
 
       <div className='container-login'>
 
-        <form className='container-form' onSubmit={this.handleFormSubmit}>
-          <input className='inputs'
+        <form className='container-form margin-login' onSubmit={this.handleFormSubmit}>
+          <input className='inputs-auth'
             id="email"
             type="email"
             name="mail"
@@ -44,7 +44,7 @@ class Login extends Component {
             required
             onChange={this.handleChange}
           />
-          <input className='inputs'
+          <input className='inputs-auth'
             id="password"
             type="password"
             name="password"

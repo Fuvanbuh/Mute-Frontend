@@ -44,10 +44,10 @@ class Signup extends Component {
     const { mail, password, username, errors } = this.state;
     return (
       <div className='container-signup'>
-        <form className='container-form' onSubmit={this.handleFormSubmit}>
-          <input className='inputs' id="username" type="text" name="username" value={username} placeholder="Username" required onChange={this.handleChange} />
-          <input className='inputs' id="email" type="email" name="mail" value={mail} placeholder="Email" required onChange={this.handleChange} />
-          <input className='inputs' id="password" type="password" name="password" value={password} placeholder="Password" required onChange={this.handleChange} />
+        <form className='container-form margin-bottom' onSubmit={this.handleFormSubmit}>
+          <input className='inputs-auth' id="username" type="text" name="username" value={username} placeholder="Username" required onChange={this.handleChange} />
+          <input className='inputs-auth' id="email" type="email" name="mail" value={mail} placeholder="Email" required onChange={this.handleChange} />
+          <input className='inputs-auth' id="password" type="password" name="password" value={password} placeholder="Password" required onChange={this.handleChange} />
           {errors && (
             <div class="errors">
               <p>{errors}</p>

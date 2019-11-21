@@ -16,6 +16,7 @@ export default class FormStory extends Component {
   
   render() {
     const {
+      theme,
       title,
       text,
       question,
@@ -113,13 +114,13 @@ export default class FormStory extends Component {
             required
           />
           <label className="label">¿Cuál es la respuesta correcta?</label>
-          <select className="custom-select" onChange={this.changeInput}>
-            <option value={correct}>{answer1}</option>
-            <option value={correct}>{answer2}</option>
-            <option value={correct}>{answer3}</option>
+          <select name="correct" className="custom-select" onChange={this.changeInput}>
+            <option value={answer1}>{answer1}</option>
+            <option value={answer2}>{answer2}</option>
+            <option value={answer3}>{answer3}</option>
 
           </select>
-          {paragraph <= 4 ? <button className="btn-none btn-welcome">Siguiente</button> : <button className="btn-none btn-welcome" onClick={this.props.goBacktoHome}>Guardar</button>}
+          {paragraph <= 4 ? <button disabled={!correct && !theme} className="btn-none btn-welcome">Siguiente</button> : <button className="btn-none btn-welcome" onClick={this.props.goBacktoHome}>Guardar</button>}
 
         </form>
       </div>
