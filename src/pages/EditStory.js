@@ -1,15 +1,11 @@
-import React, {
-  Component
-} from 'react'
+import React, {Component} from 'react'
 import storyService from '../services/story-service'
 import { Link } from 'react-router-dom';
 import goBack from '../images/goBack.png'
-
 import FormStory from '../components/FormStory'
 
 class EditStory extends Component {
   state = {
-
     idStory: "",
     paragraph: 0,
     title: "",
@@ -93,6 +89,7 @@ class EditStory extends Component {
       correct,
       idStory
     } = this.state
+
     const updatedParagraph = {
       text,
       question,
@@ -101,19 +98,17 @@ class EditStory extends Component {
       answer3,
       correct,
     };
-
    
     storyService
       .editParagraph(idStory, updatedParagraph, paragraph)
-      .then(response => {
-        this.props.history.goBack();
-      })
-      .catch(error => console.log(error));
-
-     
+      // .then(response => {
+      //   this.props.history.goBack();
+      // })
+      .catch(error => console.log(error));     
   };
 
   render() {
+    
     const {
       text,
       question,
@@ -122,7 +117,11 @@ class EditStory extends Component {
       answer3,
       paragraph
     } = this.state
-    return ( <div className="container-newstory">
+
+
+    return ( 
+    
+    <div className="container-newstory">
       <Link className='goback-icon come-back' to={'/homePage'}><img src={goBack} width='50px' alt='go back' /></Link>
 
 
@@ -147,7 +146,7 @@ class EditStory extends Component {
         answer2={answer2}
         answer3={answer3}
       />                
-      </div>
+    </div>
     )
   }
 }
