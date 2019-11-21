@@ -83,7 +83,7 @@ class Questions extends Component {
            <Redirect to={`/travelMap/${map._id}`} />       
           }
 
-            {this.state.incorrectMessage && <h5>{this.state.incorrectMessage}</h5>}
+            {this.state.incorrectMessage && <h2>{this.state.incorrectMessage}</h2>}
         </div>
           
         }

@@ -119,6 +119,7 @@ class NewStory extends Component {
       this.addParagraph()
     }
   };
+  
   goBacktoHome = () =>{
     this.props.history.goBack()
   }
