@@ -16,7 +16,6 @@ export default class FormStory extends Component {
 
   render() {
     const {
-      theme,
       title,
       text,
       question,
